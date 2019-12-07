@@ -1,0 +1,31 @@
+version: '3'
+
+services:
+  # JENKINS LTS
+  jenkins:
+    container_name: jenkins_lts
+    image: jenkins/jenkins:lts
+    restart: always    
+    networks:
+      - devnetwork
+    volumes:
+      - jenkinsdata:/var/jenkins_home
+    ports:
+      - '8080:8080'
+      - '50000:50000'  
+    environment:
+      JENKINS_HOST_HOME: "/data/jenkins"
+    logging:
+      # limit logs retained on host to 25MB
+      driver: "json-file"
+      options:
+        max-size: "500k"
+        max-file: "50"    
+
+volumes:
+  jenkinsdata:
+    external: false     
+
+networks:
+  devnetwork:
+    driver: bridge    

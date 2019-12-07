@@ -1,4 +1,4 @@
-# acme-tomcat-standalone
+# acme-tomcat-standalone-8.5
 
 This project represents a basic and standalone installation of **Tomcat** with **Docker**
 
@@ -38,7 +38,7 @@ N/A
 Create a Docker image File
 
 ```bash
-docker build -t acme/acme-tomcat-standalone .
+docker build -t acme/acme-tomcat-standalone-8.5 .
 ```
 
 2. Verify exist image created
@@ -48,7 +48,7 @@ docker build -t acme/acme-tomcat-standalone .
 Create a Docker container
 
 ```bash
-docker run -p 8888:8080 -t acme/acme-tomcat-standalone
+docker run -p 8888:8080 -t acme/acme-tomcat-standalone-8.5
 ```
 
 ## Use
