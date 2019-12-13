@@ -53,7 +53,7 @@ N/A
 Create a Docker Container 
 
 ```bash
-docker run -d -p 8081:8081 --name nexus sonatype/nexus3
+docker run -d -p 8081:8081 -p 8100:8100 --name nexus sonatype/nexus3
 ```
 
 2. Verify exist container created
@@ -80,11 +80,13 @@ docker inspect nexus | grep "IPAddress"
 For example : 172.17.0.2
 
 
+curl -u admin:admin -X GET 'http://localhost:8081/api/v2/organizations'
+
 
 
 ## Use
 
-### Login
+### Login Nexus 3
 
 The first time you connect to the container and try to log into the application the following message is displayed:
 
@@ -147,6 +149,86 @@ Wizard Operations :
 6. Create Repository
 
 ![nexusVerifyDockerRegistry.png](img/nexusVerifyDockerRegistry.png)
+
+
+
+### Allow Unsecure Connections
+
+1. Edit configuration file : <user>/.docker/daemon.json
+
+```bash
+{
+  ...
+  "insecure-registries" : [
+    "localhost:8100"
+  ]
+  ...
+}
+```
+
+
+
+### Login Private Docker Registry
+
+1. Execute the following command
+
+User Docker Registry port
+
+```bash
+docker login -u admin -p admin localhost:8100
+
+or 
+
+docker login -u admin -p admin 172.17.0.2:8100
+```
+
+WARNING! Using --password via the CLI is insecure. Use --password-stdin.
+Error response from daemon: Get http://localhost:8100/v2/: dial tcp [::1]:8100: connect: connection refused
+
+docker login -u admin -p admin 192.168.1.101:8100
+
+
+
+### Pushing a Docker Image to the Private Registry
+
+* Tag the image
+
+```bash
+docker tag acme/acme-greeting-api-restful-k8s localhost:8100/acme/acme-greeting-api-restful-k8s
+```
+
+acme/acme-greeting-api-restful-k8s
+
+* This tells Docker the new name that will be used for the Docker image and the IP address of the registry to which we later will push the image
+
+Push the image to our private registry
+
+docker push localhost:8100/acme/acme-greeting-api-restful-k8s
+
+docker tag acme/acme-greeting-api-restful-k8s localhost:8082/acme/acme-greeting-api-restful-k8s
+
+docker push localhost:8082/acme/acme-greeting-api-restful-k8s
+
+
+
+### Login Private Docker Registry
+
+1. Open the URL 
+
+```bash
+http://localhost:8081
+```
+
+2. Select "Browse" Option Main Menu
+
+3. Click "Browse" column Option on the left 
+
+4. Select "acme-docker-repo"
+
+5. List of components that appear
+
+6. Check image
+
 
 
 

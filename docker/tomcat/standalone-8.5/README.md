@@ -2,6 +2,10 @@
 
 This project represents a basic and standalone installation of **Tomcat** with **Docker**
 
+
+
+
+
 ## Technological Stack
 
 * [Docker](https://www.docker.com/) - Container Technology
@@ -16,6 +20,10 @@ Third Party Dependencies
 
 N/A
 
+
+
+
+
 ## Prerequisites
 
 Define what elements are needed to install the software
@@ -23,13 +31,25 @@ Define what elements are needed to install the software
 * Docker installed (19+)
 
 
+
+
+
 ## Installation
 
 N/A
 
+
+
+
+
+
 ## Testing
 
 N/A
+
+
+
+
 
 ## Deploy
 
@@ -51,9 +71,17 @@ Create a Docker container
 docker run -p 8888:8080 -t acme/acme-tomcat-standalone-8.5
 ```
 
+
+
+
+
 ## Use
 
 N/A
+
+
+
+
 
 ### Use Browser
 
@@ -66,10 +94,17 @@ http://localhost:8888/
 And login with : admin/admin
 
 
+
+
+
 ## Versioning
 
 **Note :** [SemVer](http://semver.org/) is used for the versioning.
 To see the available versions access the repository tags
+
+
+
+
 
 ## Authors
 
