@@ -19,4 +19,11 @@ ENV SLACK_PLUGIN_VERSION 2.1.2
 RUN set -x && curl -sLo $HOME/plugins/cks-slack-notifier-${SLACK_PLUGIN_VERSION}.jar \
 	https://github.com/kogitant/sonar-slack-notifier-plugin/releases/download/${SLACK_PLUGIN_VERSION}/cks-slack-notifier-${SLACK_PLUGIN_VERSION}.jar
 
+ENV JAVA_PLUGIN_VERSION 5.9.2.16552
+RUN set -x && curl -sLo $HOME/plugins/sonar-java-plugin-${JAVA_PLUGIN_VERSION}.jar \
+	https://binaries.sonarsource.com/Distribution/sonar-java-plugin/sonar-java-plugin-${JAVA_PLUGIN_VERSION}.jar
+
+# COPY sonar-branch-community-1.0.1.jar $HOME/plugins/
+
 RUN cp $HOME/plugins/* $SONARQUBE_HOME/extensions/plugins
+

@@ -195,7 +195,11 @@ docker login -u admin -p admin 192.168.1.101:8100
 
 ```bash
 docker tag acme/acme-greeting-api-restful-k8s localhost:8100/acme/acme-greeting-api-restful-k8s
+
+docker tag acme/acme-greeting-api-restful-k8s localhost:8082/acme/acme-greeting-api-restful-k8s
 ```
+localhost:8082
+
 
 acme/acme-greeting-api-restful-k8s
 
@@ -205,9 +209,14 @@ Push the image to our private registry
 
 docker push localhost:8100/acme/acme-greeting-api-restful-k8s
 
+
+
 docker tag acme/acme-greeting-api-restful-k8s localhost:8082/acme/acme-greeting-api-restful-k8s
 
-docker push localhost:8082/acme/acme-greeting-api-restful-k8s
+
+docker tag acme/acme-greeting-api-restful-k8s localhost:8083/acme/acme-greeting-api-restful-k8s
+
+docker push localhost:8083/acme/acme-greeting-api-restful-k8s
 
 
 

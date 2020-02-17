@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+
+  tomcat:
+    build: ./standalone-8.5
+    ports:
+      - 8888:8080
+    networks:
+      - basic-tomcat
+
+networks:
+  basic-tomcat:
+    driver: bridge

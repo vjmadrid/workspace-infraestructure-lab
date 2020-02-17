@@ -2,6 +2,7 @@
 
 This project represents a basic and standalone installation of **Sonarqube** with **Docker**
 
+https://docs.sonarqube.org/latest/analysis/overview/
 
 
 
@@ -65,7 +66,6 @@ docker-compose up
 
 ## Use
 
-
 ### Use Browser
 
 The service will accept HTTP GET requests at :
@@ -84,11 +84,12 @@ And login with : admin/admin
 
 This a configuration mechanism that affects all projects used for the configuration user
 
+
 It avoids having to add the code in each one of the POM.xml
 
-1. Check Maven settings file : (usually at ~/.m2/settings.xml)
+1. Check Maven settings file : (usually at ~/.m2/settings.xml) -> .m2 folder
 
-2. Edit o create Maven settings file
+2. Edit o create Maven settings file : settings.xml
 
 3. Add plugin group
 
@@ -143,7 +144,38 @@ It avoids having to add the code in each one of the POM.xml
 
 #### Sonar Configuration
 
+1. Add sonar configuration file : sonar.properties
+
+https://docs.sonarqube.org/latest/analysis/scan/sonarscanner/
+
+```bash
+docker-compose up
+```
+
+
+
+#### Project Sonar Configuration
+
+1. Add Project Sonar configuration file : sonar-project.properties
+
+```bash
+sonar.projectName=example1
+sonar.projectKey=com.acme.example:example1
+sonar.host.url=http://localhost:9000
+sonar.sources=src/
+sonar.sourceEncoding=UTF-8
+sonar.login=xxx
+```
+
+2. Generate security token My Account -> Security
+
+Add property : sonar.login
+
+
+
 #### Code coverage report with Jacoco
+
+1. Add Jacoco plugin
 
 ```bash
 <build>
@@ -244,10 +276,55 @@ mvn sonar:sonar \
   -Dsonar.login=038d5120360c40bd9b28033f21b392f17c3f085d
 ```
 
+To do so, open pom.xml file once again and in <properties> section add <sonar.exclusions> section in which you need to provide packages and/or classes that you want to exclude from the coverage report:
+
+<properties>
+   <!--- Other properties --->   <sonar.exclusions>
+      **/model/**,**/config/**,**/KanbanApplication.java
+   </sonar.exclusions></properties>
 
 
+https://funnelgarden.com/sonarqube-jenkins-docker/
 
+https://medium.com/@theopendle/github-jenkins-sonarqube-integration-for-java-maven-4-4-code-analysis-with-sonarqube-da569db417b6
 
+https://onthedock.github.io/post/180522-pipeline-analisis-de-codigo-con-sonarqube/
+
+https://github.com/SonarSource/docker-sonarqube/blob/442f950dae232fca8e1e919e017270971cee46f6/4.5.6/Dockerfile#L37%20Sonarqube%20Dockerfile
+
+https://www.ivankrizsan.se/2019/09/28/gitlab-ci-cd-pipeline-for-maven-based-applications/
+
+https://medium.com/faun/creating-a-free-private-npm-registry-with-verdaccio-e1becdc542b
+
+<build>
+  <plugins>
+      <plugin>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-maven-plugin</artifactId>
+      </plugin>
+      <plugin>
+          <groupId>org.jacoco</groupId>
+          <artifactId>jacoco-maven-plugin</artifactId>
+          <configuration>
+              <append>true</append>
+          </configuration>
+          <executions>
+              <execution>
+                  <goals>
+                      <goal>prepare-agent</goal>
+                  </goals>
+              </execution>
+              <execution>
+                  <id>post-unit-test</id>
+                  <phase>test</phase>
+                  <goals>
+                      <goal>report</goal>
+                  </goals>
+              </execution>
+          </executions>
+      </plugin>
+  </plugins>
+</build>
 
 
 ## Versioning
