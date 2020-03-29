@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+
+  <pluginGroups>
+
+    <pluginGroup>org.sonarsource.scanner.maven</pluginGroup>
+    <pluginGroup>org.sonatype.plugins</pluginGroup>
+
+  </pluginGroups>
+
+
+
+
+
+  <proxies>
+   
+  </proxies>
+
+
+
+
+
+  <servers>
+
+    <!-- Autentication Server used with public mirror for maven-->
+    <server>
+        <id>nexus.ic-acme-projectX</id>
+        <username>admin</username>
+        <password>admin123</password>
+    </server>
+
+    <!-- Autentication Server used with private snapshot for maven -->
+    <server>
+        <id>nexus-snapshots.ic-acme-projectX</id>
+        <username>admin</username>
+        <password>admin123</password>
+    </server>
+
+    <!-- Autentication Server used with private releases for maven -->
+    <server>
+      <id>nexus-releases.ic-acme-projectX</id>
+      <username>admin</username>
+      <password>admin123</password>
+    </server>
+
+  </servers>
+
+
+
+
+
+  <mirrors>
+
+    <!-- Public mirror used with DAE (dae-maven-public include : maven proxy, snapshots and releases -->
+    <mirror>
+        <id>central</id>
+        <name>central</name>
+        <url>http://localhost:8081/repository/maven-public/</url>
+        <mirrorOf>*</mirrorOf>
+    </mirror>
+
+  </mirrors>
+
+
+
+  <profiles>
+    
+    <!-- [PROFILE] local : uses everything in all memory (is the default profile) -->
+    <profile>
+      <id>local</id>
+      <properties>
+        <!-- [*] Project Configuration -->
+        <spring.profiles.active>local</spring.profiles.active>
+        <skip.unit.tests>false</skip.unit.tests>
+      </properties>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+    </profile>
+
+    <!-- [PROFILE] dev : uses everything in with integration with Docker components 
+            - Important : You need to set up the appropriate dae-back-infraestructure project
+    -->
+    <profile>
+      <id>dev</id>
+      <properties>
+        <!-- [*] Project Configuration -->
+        <spring.profiles.active>dev</spring.profiles.active>
+        <skip.unit.tests>false</skip.unit.tests>
+      </properties>
+    </profile>
+
+    <!-- [PROFILE] uat : used for QA area testing -->
+    <profile>
+      <id>uat</id>
+      <properties>
+        <!-- [*] Project Configuration -->
+        <spring.profiles.active>uat</spring.profiles.active>
+        <skip.unit.tests>true</skip.unit.tests>
+      </properties>
+    </profile>
+
+    <!-- [PROFILE] prod : used for execution in a productive environment -->
+    <profile>
+      <id>pro</id>
+      <properties>
+        <!-- [*] Project Configuration -->    
+        <spring.profiles.active>pro</spring.profiles.active>
+        <skip.unit.tests>true</skip.unit.tests>
+      </properties>
+    </profile>
+
+    <profile>
+      <id>sonar</id>
+      <properties>
+          <!-- [*] Project Configuration -->
+          <skip.unit.tests>false</skip.unit.tests>
+
+          <!-- [*] SonarQube Configuration 
+          <sonar.jdbc.url>jdbc:postgresql://sonarqube-db:5432/sonar</sonar.jdbc.url>
+          <sonar.jdbc.username>sonar</sonar.jdbc.username>
+          <sonar.jdbc.password>sonar</sonar.jdbc.password>
+          <sonar.jdbc.driverClassName>org.postgresql.Driver</sonar.jdbc.driverClassName>-->
+          <!-- Optional URL to server. Default value is http://localhost:9000 -->
+          <!-- DEV 
+          <sonar.host.url>http://localhost:9000</sonar.host.url>
+          -->
+          <sonar.host.url>https://des-a2dd-sonarqube.cistec.es:8443</sonar.host.url>
+
+      </properties>
+    </profile>
+
+    <profile>
+      <id>nexus</id>
+      <properties>
+          <!-- [*] Project Configuration -->
+          <skip.unit.tests>false</skip.unit.tests>
+      </properties>
+      <repositories>
+
+        <repository>
+          <id>nexus-snapshots.ic-acme-projectX</id>
+          <url>http://localhost:8081/repository/maven-snapshots/</url>
+          <layout>default</layout>
+          <releases><enabled>false</enabled></releases>
+          <snapshots><enabled>true</enabled></snapshots>
+        </repository>
+
+        <repository>
+          <id>nexus-releases.ic-acme-projectX</id>
+          <url>http://localhost:8081/repository/maven-releases/</url>
+          <layout>default</layout>
+          <releases><enabled>true</enabled></releases>
+          <snapshots><enabled>false</enabled></snapshots>
+        </repository>
+
+        <repository>
+          <id>central</id>
+          <url>http://central</url>
+          <releases><enabled>true</enabled></releases>
+          <snapshots><enabled>true</enabled></snapshots>
+        </repository>
+        
+      </repositories>
+
+      <pluginRepositories>
+        <pluginRepository>
+          <id>central</id>
+          <url>http://central</url>
+          <releases><enabled>true</enabled></releases>
+          <snapshots><enabled>true</enabled></snapshots>
+        </pluginRepository>
+      </pluginRepositories>
+
+    </profile>
+
+  </profiles>
+
+
+
+
+
+  <activeProfiles>
+    <activeProfile>local</activeProfile>
+    <activeProfile>nexus</activeProfile>
+  </activeProfiles>
+</settings>

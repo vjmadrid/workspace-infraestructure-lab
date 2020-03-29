@@ -1,0 +1,37 @@
+version: "3.7"
+services:
+  nexus:
+    container_name: nexus
+    build: ./nexus-3.20.1
+    ports:
+      - "8081:8081" # artifacts
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "200k"
+        max-file: "10"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8081/service/rest/v1/status"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    restart: unless-stopped
+    volumes:
+      - nexus-data:/nexus-data
+    networks: 
+      - custom-nexus-net
+  provisioner:
+    container_name: provisioner
+    build: ./provisioner
+    depends_on: 
+      - nexus
+    command: ["/opt/wait-for-it.sh", "nexus:8081/service/rest/v1/status", "-t", "60", "--","/opt/provision.sh"]
+    volumes:
+      - nexus-data:/data:ro
+    networks: 
+      - custom-nexus-net
+volumes:
+  nexus-data:
+networks: 
+  custom-nexus-net:
