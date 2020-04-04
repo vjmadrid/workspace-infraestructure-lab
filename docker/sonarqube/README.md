@@ -1,9 +1,16 @@
-# SonarQube Basic Standalone Compose
+# SonarQube
 
 This project represents a basic and standalone installation of **Sonarqube** with **Docker**
 
 https://docs.sonarqube.org/latest/analysis/overview/
 
+
+Different installations/configurations are covered:
+
+BASIC
+
+* SonarQube + Database + Volume
+CUSTOM
 
 
 
@@ -11,7 +18,8 @@ https://docs.sonarqube.org/latest/analysis/overview/
 
 * [Docker](https://www.docker.com/) - Container Technology
 * [Docker Hub](https://hub.docker.com/) - Docker Public repository
-* [SonarQube](https://www.sonarqube.org/) - Code Quality and Security Platform
+* [Sonarqube](https://www.sonarqube.org/) - Code Quality and Security Platform
+* [Postgres](https://www.postgresql.org/) - Relational Database
 
 Dependencies with architecture projects
 
