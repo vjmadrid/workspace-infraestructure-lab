@@ -12,8 +12,8 @@ services:
         ZOO_SERVERS: server.1=zookeeper-1:2888:3888
         ALLOW_ANONYMOUS_LOGIN: "yes"
     volumes:
-      - ./zk-single-kafka-single/zookeeper-1/data:/data
-      - ./zk-single-kafka-single/zookeeper-1/datalog:/datalog
+      - ./zk-single-kafka-single-full-stack/zookeeper-1/data:/data
+      - ./zk-single-kafka-single-full-stack/zookeeper-1/datalog:/datalog
   
   kafka-1:
     image: confluentinc/cp-kafka:5.4.0
@@ -29,7 +29,7 @@ services:
       # KAFKA_LOG4J_LOGGERS: "kafka.controller=INFO,kafka.producer.async.DefaultEventHandler=INFO,state.change.logger=INFO"
       # KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
     volumes:
-      - ./zk-single-kafka-single/kafka-1/data:/var/lib/kafka/data
+      - ./zk-single-kafka-single-full-stack/kafka-1/data:/var/lib/kafka/data
     depends_on:
       - zookeeper-1
 

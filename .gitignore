@@ -23,6 +23,13 @@
 .loadpath
 .recommenders
 
+# Kafka
+./zk-single-kafka-single/
+./zk-single-kafka-multiple/
+./zk-multiple-kafka-single/
+./zk-multiple-kafka-multiple/
+./zk-single-kafka-single-full-stack/
+
 target/
 bin/
 tmp/

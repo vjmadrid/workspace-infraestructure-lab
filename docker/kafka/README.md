@@ -1,31 +1,36 @@
-# Basic Kafka
+# Kafka
 
-Esta propuesta representa una instalación básica y standalone de **Apache Kafka** con **Docker**
+This proposal represents a basic and standalone installation of **Apache Kafka** with **Docker**
 
-Se cubren diferentes instalaciones / configuraciones :
+Different installations/configurations are covered:
 
 BASIC
 
-* zk-single-kafka-single : Una instancia de Zookeeper y una instancia de un Broker Kafka
-* zk-single-kafka-multiples : Una instancia de Zookeeper y varias instancias (3) de un Broker Kafka
-* zk-multiple-kafka-single : Varias instancias (3) de Zookeeper y una instancia de un Broker Kafka
-* zk-multiple-kafka-multiple : Varias instancias (3) de Zookeeper y varias instancias (3) de un Broker Kafka
+* zk-single-kafka-single : One instance of Zookeeper and one instance of Kafka Broker
+* zk-single-kafka-multiples : One instance of Zookeeper and several instances (3) of a Kafka Broker
+* zk-multiple-kafka-single : Several instances (3) of Zookeeper and one instance of a Kafka Broker
+* zk-multiple-kafka-multiple : Several instances (3) of Zookeeper and several instances (3) of a Kafka Broker
 
 CUSTOM
 
+It will be shown how to add extra applications (monitoring, control, etc.).
 
-## Stack Tecnológico
 
-* [Docker](https://www.docker.com/) - Technología de Contenedores/Containers
-* [Docker Hub](https://hub.docker.com/) - Repositorio de Docker Publico
+
+
+
+## Technological Stack
+
+* [Docker](https://www.docker.com/) - Container Technology
+* [Docker Hub](https://hub.docker.com/) - Docker Public repository
 * [Zookeeper](https://zookeeper.apache.org/) - Gestor distribuido
 * [Kafka](https://kafka.apache.org/) - Plataforma de Streaming distribuida
 
-Dependencias con Proyectos de Arquitectura
+Dependencies with architecture projects
 
 N/A
 
-Dependecias con Terceros
+Third Party Dependencies
 
 N/A
 
@@ -33,45 +38,46 @@ N/A
 
 
 
-## Prerrequisitos
+## Prerequisites
 
-Define que elementos son necesarios para instalar el software
+Define what elements are needed to install the software
 
 * Docker installed (19+)
 
 
-1. Ejecutar el siguiente comando
+
+
+
+## Installation
+
+1. Execute the following command
 
 ```bash
 export DOCKER_HOST_IP=127.0.0.1
 ```
 
-Con ello se genera una variable de entorno con el valor por defecto
+This generates an environment variable with the default value
 
-En ocasiones para Docker en Mac <=1.11 y para Windows la IP es diferente : 192.168.99.100
+Sometimes for Docker on Mac <=1.11 and for Windows the IP is different : 192.168.99.100
 
 ```bash
 export DOCKER_HOST_IP=192.168.99.100
 ```
 
-
-
-
-## Instalación
-
 ### Docker Compose
 
-1. Localizar el directorio principal del proyecto : <PROJECT_PATH>
+1. Locate the main directory of the project : <PROJECT_PATH>
 
-2. Ejecutar el siguiente comando
+2. Execute the following command
 
 ```bash
-docker-compose up
+docker-compose -f <file> up
 ```
 
-3. Comprobar que la imágen ha sido creada
+3. Check that the image has been loaded
 
-4. Comprobar que la aplicación ha sido desplegada correctamente
+4. Check that the application is deployed correctly
+
 
 
 
@@ -84,7 +90,7 @@ N/A
 
 
 
-## Pruebas
+## Testing
 
 N/A
 
@@ -92,41 +98,30 @@ N/A
 
 
 
-## Despliegue
+## Deploy
 
-Cada propuesta tiene su propia forma
-
-
-
-
-
-## Uso
-
-
-### Uso con Browser
-
-La URL de acceso es la siguiente :
-
-```bash
-http://localhost:8090/
-```
-
-Usuarios disponibles 
-
-* ¿?
+N/A
 
 
 
 
 
-## Versionado
+## Use
 
-**Nota :** [SemVer](http://semver.org/) es usado para el versionado.
-
-
+With Kafka development app
 
 
 
-## Autores
 
-* **atSistemas**
+
+## Versioning
+
+**Note :** [SemVer](http://semver.org/) is used for the versioning
+
+
+
+
+
+## Authors
+
+* **Víctor Madrid**

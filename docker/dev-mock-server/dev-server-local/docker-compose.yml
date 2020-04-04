@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+
+  greeting-internal:
+    build: ./acme-greeting-api-restful-internal
+    container_name: acme-greeting-api-restful-internal
+    ports:
+      - 8091:8091
+    networks:
+      - acme-net
+
+  greeting-external:
+    build: ./acme-greeting-api-restful-external
+    container_name: acme-greeting-api-restful-external
+    ports:
+      - 8092:8091
+    networks:
+      - acme-net
+
+networks:
+  acme-net:
+    driver: bridge
