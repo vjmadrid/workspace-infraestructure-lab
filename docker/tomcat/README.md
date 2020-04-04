@@ -1,7 +1,10 @@
-# Basic Tomcat
+# Tomcat
 
 This project represents a basic and standalone installation of **Tomcat** with **Docker**
 
+Different installations/configurations are covered:
+
+BASIC
 
 
 
@@ -11,6 +14,14 @@ This project represents a basic and standalone installation of **Tomcat** with *
 * [Docker](https://www.docker.com/) - Container Technology
 * [Docker Hub](https://hub.docker.com/) - Docker Public repository
 * [Tomcat 8.5](http://tomcat.apache.org) : Servlet Container
+
+Dependencies with architecture projects
+
+N/A
+
+Third Party Dependencies
+
+N/A
 
 
 
@@ -55,7 +66,7 @@ docker-compose up
 Create a Docker image File
 
 ```bash
-docker build -t local-infra-booster/basic-tomcat-standalone-8.5 .
+docker build -t acme/basic-tomcat-standalone-8.5 .
 ```
 
 3. Check that the image has been loaded
@@ -65,7 +76,7 @@ docker build -t local-infra-booster/basic-tomcat-standalone-8.5 .
 Create a Docker container
 
 ```bash
-docker run -p 8888:8080 -t local-infra-booster/basic-tomcat-standalone-8.5
+docker run -p 8888:8080 -t acme/basic-tomcat-standalone-8.5
 ```
 
 5. Check that the container is created correctly
@@ -110,4 +121,4 @@ To see the available versions access the repository tags
 
 ## Authors
 
-* **atSistemas**
+* **Víctor Madrid**
