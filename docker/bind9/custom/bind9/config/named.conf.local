@@ -1,0 +1,4 @@
+zone "acme.com" {
+    type master;
+    file "/etc/bind/zones/acme.com.zone";
+};

@@ -1,0 +1,9 @@
+version: '3.7'
+
+services:
+
+   bind9:
+      build: ./bind9
+      container_name: bind9
+      volumes:
+         - ./custom-bind9:/etc/bind/

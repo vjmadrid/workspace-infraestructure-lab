@@ -33,7 +33,7 @@ Consejos :
 * Se aconseja crear un nuevo blob store por cada nuevo repos que se vaya a crear
 * Los datos de cada repositorio deberían ubicarse en un directorio diferentes dentro de /nexus-data dentro del contenedor
 
-Dependiendo de la imágen utilizada los ficheros de configuración propios de la herramienta pueden encontrarse en diferentes ubicaciones 
+Dependiendo de la imagen utilizada los ficheros de configuración propios de la herramienta pueden encontrarse en diferentes ubicaciones 
 
 Por ejemplo :
 
@@ -82,7 +82,7 @@ Define que elementos son necesarios para instalar el software
 docker-compose build && docker-compose up -d
 ```
 
-3. Comprobar que la imágen ha sido creada
+3. Comprobar que la imagen ha sido creada
 
 4. Comprobar que la aplicación ha sido desplegada correctamente
 

@@ -40,7 +40,7 @@ Por otro lado se van a trabajar con 2 puertos concretos :
 * 8082 : Permite hacer pull o descargar desde el repositorio proxy
 * 8083 : Permite hacer pull y push sobre el respositorio privado
 
-Dependiendo de la imágen utilizada los ficheros de configuración propios de la herramienta pueden encontrarse en diferentes ubicaciones 
+Dependiendo de la imagen utilizada los ficheros de configuración propios de la herramienta pueden encontrarse en diferentes ubicaciones 
 
 Por ejemplo :
 
@@ -91,7 +91,7 @@ Define que elementos son necesarios para instalar el software
 docker-compose build && docker-compose up -d
 ```
 
-3. Comprobar que la imágen ha sido creada
+3. Comprobar que la imagen ha sido creada
 
 4. Comprobar que la aplicación ha sido desplegada correctamente
 
@@ -187,7 +187,7 @@ Eso debería de permitir trabajar con HTTPs y HTTP -> La configuración es muy d
 
 ### Configuración "Global" de Docker para  usar repositorios privados de Nexus CON Autenticación
 
-Dependiendo de los mecanismos o plugins que se vayan a utilizar para realizar un push de una imágen se aconseja configurarlo de forma global a docker para no tener que hacer login cada vez
+Dependiendo de los mecanismos o plugins que se vayan a utilizar para realizar un push de una imagen se aconseja configurarlo de forma global a docker para no tener que hacer login cada vez
 
 1. Localizar el fichero **config.json** : ~/.docker/config.json
 
@@ -226,7 +226,7 @@ Se hará necesario añadir el server en el fichero : $MAVEN_HOME/settings.xml
 
 1. Localizar el directorio de un proyecto con fichero DockerFile
 2. Ejecutar la construcción del proyecto para verificar la generación del artefacto
-3. Generar Imágen
+3. Generar Imagen
 
 Importante : Establecer etiqueta para identificar el proyecto
 
@@ -267,7 +267,7 @@ docker login -u admin -p admin123 localhost:8082
 docker login -u admin -p admin123 localhost:8083
 ```
 
-6. Push Imágen
+6. Push Imagen
 
 ```sh
 docker push localhost:8083/ETIQUETA/NOMPRE_IMAGEN

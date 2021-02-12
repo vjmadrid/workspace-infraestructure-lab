@@ -1,0 +1,176 @@
+2020-11-21_18:37:02.95008 244:C 21 Nov 2020 18:37:02.950 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+2020-11-21_18:37:02.95053 244:C 21 Nov 2020 18:37:02.950 # Redis version=5.0.9, bits=64, commit=ce878b6e, modified=0, pid=244, just started
+2020-11-21_18:37:02.95094 244:C 21 Nov 2020 18:37:02.950 # Configuration loaded
+2020-11-21_18:37:02.95158 244:M 21 Nov 2020 18:37:02.951 # Opening Unix socket: bind: File name too long
+2020-11-21_18:37:03.96657 245:C 21 Nov 2020 18:37:03.966 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+2020-11-21_18:37:03.96683 245:C 21 Nov 2020 18:37:03.966 # Redis version=5.0.9, bits=64, commit=ce878b6e, modified=0, pid=245, just started
+2020-11-21_18:37:03.96703 245:C 21 Nov 2020 18:37:03.966 # Configuration loaded
+2020-11-21_18:37:03.96801 245:M 21 Nov 2020 18:37:03.967 # Opening Unix socket: bind: File name too long
+2020-11-21_18:37:04.98069 250:C 21 Nov 2020 18:37:04.980 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+2020-11-21_18:37:04.98100 250:C 21 Nov 2020 18:37:04.980 # Redis version=5.0.9, bits=64, commit=ce878b6e, modified=0, pid=250, just started
+2020-11-21_18:37:04.98126 250:C 21 Nov 2020 18:37:04.980 # Configuration loaded
+2020-11-21_18:37:04.98227 250:M 21 Nov 2020 18:37:04.982 # Opening Unix socket: bind: File name too long
+2020-11-21_18:37:05.99825 251:C 21 Nov 2020 18:37:05.998 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+2020-11-21_18:37:05.99857 251:C 21 Nov 2020 18:37:05.998 # Redis version=5.0.9, bits=64, commit=ce878b6e, modified=0, pid=251, just started
+2020-11-21_18:37:05.99887 251:C 21 Nov 2020 18:37:05.998 # Configuration loaded
+2020-11-21_18:37:05.99988 251:M 21 Nov 2020 18:37:05.999 # Opening Unix socket: bind: File name too long
+2020-11-21_18:37:07.01217 258:C 21 Nov 2020 18:37:07.012 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+2020-11-21_18:37:07.01252 258:C 21 Nov 2020 18:37:07.012 # Redis version=5.0.9, bits=64, commit=ce878b6e, modified=0, pid=258, just started
+2020-11-21_18:37:07.01288 258:C 21 Nov 2020 18:37:07.012 # Configuration loaded
+2020-11-21_18:37:07.01415 258:M 21 Nov 2020 18:37:07.014 # Opening Unix socket: bind: File name too long
+2020-11-21_18:37:08.02885 259:C 21 Nov 2020 18:37:08.028 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+2020-11-21_18:37:08.02919 259:C 21 Nov 2020 18:37:08.028 # Redis version=5.0.9, bits=64, commit=ce878b6e, modified=0, pid=259, just started
+2020-11-21_18:37:08.02951 259:C 21 Nov 2020 18:37:08.028 # Configuration loaded
+2020-11-21_18:37:08.03064 259:M 21 Nov 2020 18:37:08.030 # Opening Unix socket: bind: File name too long
+2020-11-21_18:37:09.06442 277:C 21 Nov 2020 18:37:09.064 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+2020-11-21_18:37:09.06466 277:C 21 Nov 2020 18:37:09.064 # Redis version=5.0.9, bits=64, commit=ce878b6e, modified=0, pid=277, just started
+2020-11-21_18:37:09.06487 277:C 21 Nov 2020 18:37:09.064 # Configuration loaded
+2020-11-21_18:37:09.06580 277:M 21 Nov 2020 18:37:09.065 # Opening Unix socket: bind: File name too long
+2020-11-21_18:37:10.07847 301:C 21 Nov 2020 18:37:10.078 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+2020-11-21_18:37:10.07874 301:C 21 Nov 2020 18:37:10.078 # Redis version=5.0.9, bits=64, commit=ce878b6e, modified=0, pid=301, just started
+2020-11-21_18:37:10.07896 301:C 21 Nov 2020 18:37:10.078 # Configuration loaded
+2020-11-21_18:37:10.08014 301:M 21 Nov 2020 18:37:10.080 # Opening Unix socket: bind: File name too long
+2020-11-21_18:37:11.09643 321:C 21 Nov 2020 18:37:11.096 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+2020-11-21_18:37:11.09667 321:C 21 Nov 2020 18:37:11.096 # Redis version=5.0.9, bits=64, commit=ce878b6e, modified=0, pid=321, just started
+2020-11-21_18:37:11.09691 321:C 21 Nov 2020 18:37:11.096 # Configuration loaded
+2020-11-21_18:37:11.09801 321:M 21 Nov 2020 18:37:11.097 # Opening Unix socket: bind: File name too long
+2020-11-21_18:37:12.11123 337:C 21 Nov 2020 18:37:12.111 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+2020-11-21_18:37:12.11148 337:C 21 Nov 2020 18:37:12.111 # Redis version=5.0.9, bits=64, commit=ce878b6e, modified=0, pid=337, just started
+2020-11-21_18:37:12.11168 337:C 21 Nov 2020 18:37:12.111 # Configuration loaded
+2020-11-21_18:37:12.11270 337:M 21 Nov 2020 18:37:12.112 # Opening Unix socket: bind: File name too long
+2020-11-21_18:37:13.13781 353:C 21 Nov 2020 18:37:13.137 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+2020-11-21_18:37:13.13803 353:C 21 Nov 2020 18:37:13.137 # Redis version=5.0.9, bits=64, commit=ce878b6e, modified=0, pid=353, just started
+2020-11-21_18:37:13.13820 353:C 21 Nov 2020 18:37:13.137 # Configuration loaded
+2020-11-21_18:37:13.13946 353:M 21 Nov 2020 18:37:13.139 # Opening Unix socket: bind: File name too long
+2020-11-21_18:37:14.15276 373:C 21 Nov 2020 18:37:14.152 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+2020-11-21_18:37:14.15328 373:C 21 Nov 2020 18:37:14.152 # Redis version=5.0.9, bits=64, commit=ce878b6e, modified=0, pid=373, just started
+2020-11-21_18:37:14.15361 373:C 21 Nov 2020 18:37:14.152 # Configuration loaded
+2020-11-21_18:37:14.15429 373:M 21 Nov 2020 18:37:14.154 # Opening Unix socket: bind: File name too long
+2020-11-21_18:37:15.16197 393:C 21 Nov 2020 18:37:15.161 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+2020-11-21_18:37:15.16223 393:C 21 Nov 2020 18:37:15.162 # Redis version=5.0.9, bits=64, commit=ce878b6e, modified=0, pid=393, just started
+2020-11-21_18:37:15.16244 393:C 21 Nov 2020 18:37:15.162 # Configuration loaded
+2020-11-21_18:37:15.16380 393:M 21 Nov 2020 18:37:15.163 # Opening Unix socket: bind: File name too long
+2020-11-21_18:37:16.19213 415:C 21 Nov 2020 18:37:16.192 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+2020-11-21_18:37:16.20008 415:C 21 Nov 2020 18:37:16.192 # Redis version=5.0.9, bits=64, commit=ce878b6e, modified=0, pid=415, just started
+2020-11-21_18:37:16.20059 415:C 21 Nov 2020 18:37:16.192 # Configuration loaded
+2020-11-21_18:37:16.20089 415:M 21 Nov 2020 18:37:16.200 # Opening Unix socket: bind: File name too long
+2020-11-21_18:37:17.22297 431:C 21 Nov 2020 18:37:17.222 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+2020-11-21_18:37:17.22331 431:C 21 Nov 2020 18:37:17.222 # Redis version=5.0.9, bits=64, commit=ce878b6e, modified=0, pid=431, just started
+2020-11-21_18:37:17.22356 431:C 21 Nov 2020 18:37:17.222 # Configuration loaded
+2020-11-21_18:37:17.22459 431:M 21 Nov 2020 18:37:17.224 # Opening Unix socket: bind: File name too long
+2020-11-21_18:37:18.24680 450:C 21 Nov 2020 18:37:18.246 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+2020-11-21_18:37:18.24712 450:C 21 Nov 2020 18:37:18.246 # Redis version=5.0.9, bits=64, commit=ce878b6e, modified=0, pid=450, just started
+2020-11-21_18:37:18.24760 450:C 21 Nov 2020 18:37:18.246 # Configuration loaded
+2020-11-21_18:37:18.25007 450:M 21 Nov 2020 18:37:18.249 # Opening Unix socket: bind: File name too long
+2020-11-21_18:37:19.26034 465:C 21 Nov 2020 18:37:19.260 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+2020-11-21_18:37:19.26054 465:C 21 Nov 2020 18:37:19.260 # Redis version=5.0.9, bits=64, commit=ce878b6e, modified=0, pid=465, just started
+2020-11-21_18:37:19.26074 465:C 21 Nov 2020 18:37:19.260 # Configuration loaded
+2020-11-21_18:37:19.26180 465:M 21 Nov 2020 18:37:19.261 # Opening Unix socket: bind: File name too long
+2020-11-21_18:37:20.27353 480:C 21 Nov 2020 18:37:20.273 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+2020-11-21_18:37:20.27376 480:C 21 Nov 2020 18:37:20.273 # Redis version=5.0.9, bits=64, commit=ce878b6e, modified=0, pid=480, just started
+2020-11-21_18:37:20.27393 480:C 21 Nov 2020 18:37:20.273 # Configuration loaded
+2020-11-21_18:37:20.27701 480:M 21 Nov 2020 18:37:20.276 # Opening Unix socket: bind: File name too long
+2020-11-21_18:37:21.29480 499:C 21 Nov 2020 18:37:21.294 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+2020-11-21_18:37:21.29504 499:C 21 Nov 2020 18:37:21.294 # Redis version=5.0.9, bits=64, commit=ce878b6e, modified=0, pid=499, just started
+2020-11-21_18:37:21.29522 499:C 21 Nov 2020 18:37:21.294 # Configuration loaded
+2020-11-21_18:37:21.29632 499:M 21 Nov 2020 18:37:21.296 # Opening Unix socket: bind: File name too long
+2020-11-21_18:37:22.30665 515:C 21 Nov 2020 18:37:22.306 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+2020-11-21_18:37:22.30694 515:C 21 Nov 2020 18:37:22.306 # Redis version=5.0.9, bits=64, commit=ce878b6e, modified=0, pid=515, just started
+2020-11-21_18:37:22.30714 515:C 21 Nov 2020 18:37:22.306 # Configuration loaded
+2020-11-21_18:37:22.30801 515:M 21 Nov 2020 18:37:22.307 # Opening Unix socket: bind: File name too long
+2020-11-21_18:37:23.31949 530:C 21 Nov 2020 18:37:23.319 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+2020-11-21_18:37:23.31973 530:C 21 Nov 2020 18:37:23.319 # Redis version=5.0.9, bits=64, commit=ce878b6e, modified=0, pid=530, just started
+2020-11-21_18:37:23.31996 530:C 21 Nov 2020 18:37:23.319 # Configuration loaded
+2020-11-21_18:37:23.32099 530:M 21 Nov 2020 18:37:23.320 # Opening Unix socket: bind: File name too long
+2020-11-21_18:37:24.33251 547:C 21 Nov 2020 18:37:24.332 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+2020-11-21_18:37:24.33281 547:C 21 Nov 2020 18:37:24.332 # Redis version=5.0.9, bits=64, commit=ce878b6e, modified=0, pid=547, just started
+2020-11-21_18:37:24.33306 547:C 21 Nov 2020 18:37:24.332 # Configuration loaded
+2020-11-21_18:37:24.33393 547:M 21 Nov 2020 18:37:24.333 # Opening Unix socket: bind: File name too long
+2020-11-21_18:37:25.35549 564:C 21 Nov 2020 18:37:25.355 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+2020-11-21_18:37:25.35574 564:C 21 Nov 2020 18:37:25.355 # Redis version=5.0.9, bits=64, commit=ce878b6e, modified=0, pid=564, just started
+2020-11-21_18:37:25.35592 564:C 21 Nov 2020 18:37:25.355 # Configuration loaded
+2020-11-21_18:37:25.36358 564:M 21 Nov 2020 18:37:25.363 # Opening Unix socket: bind: File name too long
+2020-11-21_18:37:26.37871 581:C 21 Nov 2020 18:37:26.378 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+2020-11-21_18:37:26.37897 581:C 21 Nov 2020 18:37:26.378 # Redis version=5.0.9, bits=64, commit=ce878b6e, modified=0, pid=581, just started
+2020-11-21_18:37:26.37926 581:C 21 Nov 2020 18:37:26.378 # Configuration loaded
+2020-11-21_18:37:26.38060 581:M 21 Nov 2020 18:37:26.380 # Opening Unix socket: bind: File name too long
+2020-11-21_18:37:27.39305 598:C 21 Nov 2020 18:37:27.393 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+2020-11-21_18:37:27.39330 598:C 21 Nov 2020 18:37:27.393 # Redis version=5.0.9, bits=64, commit=ce878b6e, modified=0, pid=598, just started
+2020-11-21_18:37:27.39348 598:C 21 Nov 2020 18:37:27.393 # Configuration loaded
+2020-11-21_18:37:27.39445 598:M 21 Nov 2020 18:37:27.394 # Opening Unix socket: bind: File name too long
+2020-11-21_18:37:28.43198 632:C 21 Nov 2020 18:37:28.431 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+2020-11-21_18:37:28.43260 632:C 21 Nov 2020 18:37:28.432 # Redis version=5.0.9, bits=64, commit=ce878b6e, modified=0, pid=632, just started
+2020-11-21_18:37:28.43305 632:C 21 Nov 2020 18:37:28.432 # Configuration loaded
+2020-11-21_18:37:28.44204 632:M 21 Nov 2020 18:37:28.439 # Opening Unix socket: bind: File name too long
+2020-11-21_18:37:29.46968 647:C 21 Nov 2020 18:37:29.469 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+2020-11-21_18:37:29.47023 647:C 21 Nov 2020 18:37:29.469 # Redis version=5.0.9, bits=64, commit=ce878b6e, modified=0, pid=647, just started
+2020-11-21_18:37:29.47052 647:C 21 Nov 2020 18:37:29.469 # Configuration loaded
+2020-11-21_18:37:29.47076 647:M 21 Nov 2020 18:37:29.470 # Opening Unix socket: bind: File name too long
+2020-11-21_18:37:30.58338 663:C 21 Nov 2020 18:37:30.583 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+2020-11-21_18:37:30.58372 663:C 21 Nov 2020 18:37:30.583 # Redis version=5.0.9, bits=64, commit=ce878b6e, modified=0, pid=663, just started
+2020-11-21_18:37:30.58399 663:C 21 Nov 2020 18:37:30.583 # Configuration loaded
+2020-11-21_18:37:30.58518 663:M 21 Nov 2020 18:37:30.585 # Opening Unix socket: bind: File name too long
+2020-11-21_18:37:31.60817 679:C 21 Nov 2020 18:37:31.608 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+2020-11-21_18:37:31.60847 679:C 21 Nov 2020 18:37:31.608 # Redis version=5.0.9, bits=64, commit=ce878b6e, modified=0, pid=679, just started
+2020-11-21_18:37:31.60877 679:C 21 Nov 2020 18:37:31.608 # Configuration loaded
+2020-11-21_18:37:31.61011 679:M 21 Nov 2020 18:37:31.610 # Opening Unix socket: bind: File name too long
+2020-11-21_18:37:32.63028 695:C 21 Nov 2020 18:37:32.630 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+2020-11-21_18:37:32.63056 695:C 21 Nov 2020 18:37:32.630 # Redis version=5.0.9, bits=64, commit=ce878b6e, modified=0, pid=695, just started
+2020-11-21_18:37:32.63082 695:C 21 Nov 2020 18:37:32.630 # Configuration loaded
+2020-11-21_18:37:32.63199 695:M 21 Nov 2020 18:37:32.631 # Opening Unix socket: bind: File name too long
+2020-11-21_18:37:33.74687 710:C 21 Nov 2020 18:37:33.743 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+2020-11-21_18:37:33.74710 710:C 21 Nov 2020 18:37:33.746 # Redis version=5.0.9, bits=64, commit=ce878b6e, modified=0, pid=710, just started
+2020-11-21_18:37:33.74734 710:C 21 Nov 2020 18:37:33.746 # Configuration loaded
+2020-11-21_18:37:33.75045 710:M 21 Nov 2020 18:37:33.750 # Opening Unix socket: bind: File name too long
+2020-11-21_18:37:34.77255 727:C 21 Nov 2020 18:37:34.772 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+2020-11-21_18:37:34.77292 727:C 21 Nov 2020 18:37:34.772 # Redis version=5.0.9, bits=64, commit=ce878b6e, modified=0, pid=727, just started
+2020-11-21_18:37:34.77314 727:C 21 Nov 2020 18:37:34.772 # Configuration loaded
+2020-11-21_18:37:34.77433 727:M 21 Nov 2020 18:37:34.774 # Opening Unix socket: bind: File name too long
+2020-11-21_18:37:35.79961 742:C 21 Nov 2020 18:37:35.798 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+2020-11-21_18:37:35.79991 742:C 21 Nov 2020 18:37:35.798 # Redis version=5.0.9, bits=64, commit=ce878b6e, modified=0, pid=742, just started
+2020-11-21_18:37:35.80070 742:C 21 Nov 2020 18:37:35.798 # Configuration loaded
+2020-11-21_18:37:35.80092 742:M 21 Nov 2020 18:37:35.800 # Opening Unix socket: bind: File name too long
+2020-11-21_18:37:36.80876 759:C 21 Nov 2020 18:37:36.808 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+2020-11-21_18:37:36.80895 759:C 21 Nov 2020 18:37:36.808 # Redis version=5.0.9, bits=64, commit=ce878b6e, modified=0, pid=759, just started
+2020-11-21_18:37:36.80917 759:C 21 Nov 2020 18:37:36.808 # Configuration loaded
+2020-11-21_18:37:36.81021 759:M 21 Nov 2020 18:37:36.810 # Opening Unix socket: bind: File name too long
+2020-11-21_18:37:37.82943 774:C 21 Nov 2020 18:37:37.828 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+2020-11-21_18:37:37.82969 774:C 21 Nov 2020 18:37:37.828 # Redis version=5.0.9, bits=64, commit=ce878b6e, modified=0, pid=774, just started
+2020-11-21_18:37:37.82997 774:C 21 Nov 2020 18:37:37.828 # Configuration loaded
+2020-11-21_18:37:37.83020 774:M 21 Nov 2020 18:37:37.829 # Opening Unix socket: bind: File name too long
+2020-11-21_18:37:38.85498 790:C 21 Nov 2020 18:37:38.854 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+2020-11-21_18:37:38.85676 790:C 21 Nov 2020 18:37:38.854 # Redis version=5.0.9, bits=64, commit=ce878b6e, modified=0, pid=790, just started
+2020-11-21_18:37:38.85701 790:C 21 Nov 2020 18:37:38.854 # Configuration loaded
+2020-11-21_18:37:38.85723 790:M 21 Nov 2020 18:37:38.856 # Opening Unix socket: bind: File name too long
+2020-11-21_18:37:39.86828 806:C 21 Nov 2020 18:37:39.868 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+2020-11-21_18:37:39.86851 806:C 21 Nov 2020 18:37:39.868 # Redis version=5.0.9, bits=64, commit=ce878b6e, modified=0, pid=806, just started
+2020-11-21_18:37:39.86876 806:C 21 Nov 2020 18:37:39.868 # Configuration loaded
+2020-11-21_18:37:39.86987 806:M 21 Nov 2020 18:37:39.869 # Opening Unix socket: bind: File name too long
+2020-11-21_18:37:40.88918 821:C 21 Nov 2020 18:37:40.889 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+2020-11-21_18:37:40.88944 821:C 21 Nov 2020 18:37:40.889 # Redis version=5.0.9, bits=64, commit=ce878b6e, modified=0, pid=821, just started
+2020-11-21_18:37:40.88968 821:C 21 Nov 2020 18:37:40.889 # Configuration loaded
+2020-11-21_18:37:40.89077 821:M 21 Nov 2020 18:37:40.890 # Opening Unix socket: bind: File name too long
+2020-11-21_18:37:41.90948 837:C 21 Nov 2020 18:37:41.909 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+2020-11-21_18:37:41.90974 837:C 21 Nov 2020 18:37:41.909 # Redis version=5.0.9, bits=64, commit=ce878b6e, modified=0, pid=837, just started
+2020-11-21_18:37:41.90990 837:C 21 Nov 2020 18:37:41.909 # Configuration loaded
+2020-11-21_18:37:41.91143 837:M 21 Nov 2020 18:37:41.911 # Opening Unix socket: bind: File name too long
+2020-11-21_18:37:42.92825 854:C 21 Nov 2020 18:37:42.928 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+2020-11-21_18:37:42.92859 854:C 21 Nov 2020 18:37:42.928 # Redis version=5.0.9, bits=64, commit=ce878b6e, modified=0, pid=854, just started
+2020-11-21_18:37:42.92880 854:C 21 Nov 2020 18:37:42.928 # Configuration loaded
+2020-11-21_18:37:42.93313 854:M 21 Nov 2020 18:37:42.933 # Opening Unix socket: bind: File name too long
+2020-11-21_18:37:43.94453 871:C 21 Nov 2020 18:37:43.944 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+2020-11-21_18:37:43.94568 871:C 21 Nov 2020 18:37:43.944 # Redis version=5.0.9, bits=64, commit=ce878b6e, modified=0, pid=871, just started
+2020-11-21_18:37:43.94606 871:C 21 Nov 2020 18:37:43.944 # Configuration loaded
+2020-11-21_18:37:43.94666 871:M 21 Nov 2020 18:37:43.946 # Opening Unix socket: bind: File name too long
+2020-11-21_18:37:44.96848 887:C 21 Nov 2020 18:37:44.968 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+2020-11-21_18:37:44.96877 887:C 21 Nov 2020 18:37:44.968 # Redis version=5.0.9, bits=64, commit=ce878b6e, modified=0, pid=887, just started
+2020-11-21_18:37:44.96906 887:C 21 Nov 2020 18:37:44.968 # Configuration loaded
+2020-11-21_18:37:44.97029 887:M 21 Nov 2020 18:37:44.970 # Opening Unix socket: bind: File name too long
+2020-11-21_18:37:45.98973 903:C 21 Nov 2020 18:37:45.989 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+2020-11-21_18:37:45.99018 903:C 21 Nov 2020 18:37:45.989 # Redis version=5.0.9, bits=64, commit=ce878b6e, modified=0, pid=903, just started
+2020-11-21_18:37:45.99045 903:C 21 Nov 2020 18:37:45.989 # Configuration loaded
+2020-11-21_18:37:45.99078 903:M 21 Nov 2020 18:37:45.990 # Opening Unix socket: bind: File name too long
+2020-11-21_18:37:47.01949 919:C 21 Nov 2020 18:37:47.019 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+2020-11-21_18:37:47.01975 919:C 21 Nov 2020 18:37:47.019 # Redis version=5.0.9, bits=64, commit=ce878b6e, modified=0, pid=919, just started
+2020-11-21_18:37:47.01993 919:C 21 Nov 2020 18:37:47.019 # Configuration loaded
+2020-11-21_18:37:47.02210 919:M 21 Nov 2020 18:37:47.022 # Opening Unix socket: bind: File name too long

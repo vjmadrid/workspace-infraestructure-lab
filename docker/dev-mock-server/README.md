@@ -8,6 +8,8 @@ Different installations/configurations are covered:
 
 Mount docker containers with different API display allowing the boot with own or external configuration files
 
+* Each microservice generates an embedded h2 database that simulates the behavior od the real database
+
 Note: applications will use memory resources
 
 **dev-mock-server-with-infra-embedded**
@@ -100,8 +102,8 @@ N/A
 
 ## Use
 
-With Kafka development app
-
+* Access with Post,am Client
+* Access Swagger
 
 
 

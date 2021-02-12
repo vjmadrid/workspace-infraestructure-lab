@@ -1,0 +1,110 @@
+2020-11-21_18:43:43.38154 LOG:  could not bind Unix address "/var/opt/gitlab/postgresql/.s.PGSQL.5432": File name too long
+2020-11-21_18:43:43.38208 HINT:  Is another postmaster already running on port 5432? If not, remove socket file "/var/opt/gitlab/postgresql/.s.PGSQL.5432" and retry.
+2020-11-21_18:43:43.38257 WARNING:  could not create Unix-domain socket in directory "/var/opt/gitlab/postgresql"
+2020-11-21_18:43:43.38297 FATAL:  could not create any Unix-domain sockets
+2020-11-21_18:43:43.38490 LOG:  database system is shut down
+2020-11-21_18:43:44.48255 LOG:  could not bind Unix address "/var/opt/gitlab/postgresql/.s.PGSQL.5432": File name too long
+2020-11-21_18:43:44.48285 HINT:  Is another postmaster already running on port 5432? If not, remove socket file "/var/opt/gitlab/postgresql/.s.PGSQL.5432" and retry.
+2020-11-21_18:43:44.48311 WARNING:  could not create Unix-domain socket in directory "/var/opt/gitlab/postgresql"
+2020-11-21_18:43:44.48337 FATAL:  could not create any Unix-domain sockets
+2020-11-21_18:43:44.48525 LOG:  database system is shut down
+2020-11-21_18:43:45.58261 LOG:  could not bind Unix address "/var/opt/gitlab/postgresql/.s.PGSQL.5432": File name too long
+2020-11-21_18:43:45.58320 HINT:  Is another postmaster already running on port 5432? If not, remove socket file "/var/opt/gitlab/postgresql/.s.PGSQL.5432" and retry.
+2020-11-21_18:43:45.58368 WARNING:  could not create Unix-domain socket in directory "/var/opt/gitlab/postgresql"
+2020-11-21_18:43:45.58426 FATAL:  could not create any Unix-domain sockets
+2020-11-21_18:43:45.58538 LOG:  database system is shut down
+2020-11-21_18:43:46.66144 LOG:  could not bind Unix address "/var/opt/gitlab/postgresql/.s.PGSQL.5432": File name too long
+2020-11-21_18:43:46.66168 HINT:  Is another postmaster already running on port 5432? If not, remove socket file "/var/opt/gitlab/postgresql/.s.PGSQL.5432" and retry.
+2020-11-21_18:43:46.66194 WARNING:  could not create Unix-domain socket in directory "/var/opt/gitlab/postgresql"
+2020-11-21_18:43:46.66223 FATAL:  could not create any Unix-domain sockets
+2020-11-21_18:43:46.66289 LOG:  database system is shut down
+2020-11-21_18:43:47.74562 LOG:  could not bind Unix address "/var/opt/gitlab/postgresql/.s.PGSQL.5432": File name too long
+2020-11-21_18:43:47.74587 HINT:  Is another postmaster already running on port 5432? If not, remove socket file "/var/opt/gitlab/postgresql/.s.PGSQL.5432" and retry.
+2020-11-21_18:43:47.74611 WARNING:  could not create Unix-domain socket in directory "/var/opt/gitlab/postgresql"
+2020-11-21_18:43:47.74634 FATAL:  could not create any Unix-domain sockets
+2020-11-21_18:43:47.74762 LOG:  database system is shut down
+2020-11-21_18:43:48.84339 LOG:  could not bind Unix address "/var/opt/gitlab/postgresql/.s.PGSQL.5432": File name too long
+2020-11-21_18:43:48.84374 HINT:  Is another postmaster already running on port 5432? If not, remove socket file "/var/opt/gitlab/postgresql/.s.PGSQL.5432" and retry.
+2020-11-21_18:43:48.84421 WARNING:  could not create Unix-domain socket in directory "/var/opt/gitlab/postgresql"
+2020-11-21_18:43:48.84461 FATAL:  could not create any Unix-domain sockets
+2020-11-21_18:43:48.84808 LOG:  database system is shut down
+2020-11-21_18:43:49.93954 LOG:  could not bind Unix address "/var/opt/gitlab/postgresql/.s.PGSQL.5432": File name too long
+2020-11-21_18:43:49.93973 HINT:  Is another postmaster already running on port 5432? If not, remove socket file "/var/opt/gitlab/postgresql/.s.PGSQL.5432" and retry.
+2020-11-21_18:43:49.93999 WARNING:  could not create Unix-domain socket in directory "/var/opt/gitlab/postgresql"
+2020-11-21_18:43:49.94021 FATAL:  could not create any Unix-domain sockets
+2020-11-21_18:43:49.94160 LOG:  database system is shut down
+2020-11-21_18:43:50.98934 LOG:  could not bind Unix address "/var/opt/gitlab/postgresql/.s.PGSQL.5432": File name too long
+2020-11-21_18:43:50.98955 HINT:  Is another postmaster already running on port 5432? If not, remove socket file "/var/opt/gitlab/postgresql/.s.PGSQL.5432" and retry.
+2020-11-21_18:43:50.98982 WARNING:  could not create Unix-domain socket in directory "/var/opt/gitlab/postgresql"
+2020-11-21_18:43:50.99006 FATAL:  could not create any Unix-domain sockets
+2020-11-21_18:43:50.99118 LOG:  database system is shut down
+2020-11-21_18:43:52.04223 LOG:  could not bind Unix address "/var/opt/gitlab/postgresql/.s.PGSQL.5432": File name too long
+2020-11-21_18:43:52.04255 HINT:  Is another postmaster already running on port 5432? If not, remove socket file "/var/opt/gitlab/postgresql/.s.PGSQL.5432" and retry.
+2020-11-21_18:43:52.04286 WARNING:  could not create Unix-domain socket in directory "/var/opt/gitlab/postgresql"
+2020-11-21_18:43:52.04310 FATAL:  could not create any Unix-domain sockets
+2020-11-21_18:43:52.04417 LOG:  database system is shut down
+2020-11-21_18:43:53.08762 LOG:  could not bind Unix address "/var/opt/gitlab/postgresql/.s.PGSQL.5432": File name too long
+2020-11-21_18:43:53.08789 HINT:  Is another postmaster already running on port 5432? If not, remove socket file "/var/opt/gitlab/postgresql/.s.PGSQL.5432" and retry.
+2020-11-21_18:43:53.08811 WARNING:  could not create Unix-domain socket in directory "/var/opt/gitlab/postgresql"
+2020-11-21_18:43:53.08832 FATAL:  could not create any Unix-domain sockets
+2020-11-21_18:43:53.08909 LOG:  database system is shut down
+2020-11-21_18:43:54.31386 LOG:  could not bind Unix address "/var/opt/gitlab/postgresql/.s.PGSQL.5432": File name too long
+2020-11-21_18:43:54.31418 HINT:  Is another postmaster already running on port 5432? If not, remove socket file "/var/opt/gitlab/postgresql/.s.PGSQL.5432" and retry.
+2020-11-21_18:43:54.31445 WARNING:  could not create Unix-domain socket in directory "/var/opt/gitlab/postgresql"
+2020-11-21_18:43:54.31475 FATAL:  could not create any Unix-domain sockets
+2020-11-21_18:43:54.31602 LOG:  database system is shut down
+2020-11-21_18:43:55.37772 LOG:  could not bind Unix address "/var/opt/gitlab/postgresql/.s.PGSQL.5432": File name too long
+2020-11-21_18:43:55.37792 HINT:  Is another postmaster already running on port 5432? If not, remove socket file "/var/opt/gitlab/postgresql/.s.PGSQL.5432" and retry.
+2020-11-21_18:43:55.37820 WARNING:  could not create Unix-domain socket in directory "/var/opt/gitlab/postgresql"
+2020-11-21_18:43:55.37865 FATAL:  could not create any Unix-domain sockets
+2020-11-21_18:43:55.38131 LOG:  database system is shut down
+2020-11-21_18:43:56.54663 LOG:  could not bind Unix address "/var/opt/gitlab/postgresql/.s.PGSQL.5432": File name too long
+2020-11-21_18:43:56.54695 HINT:  Is another postmaster already running on port 5432? If not, remove socket file "/var/opt/gitlab/postgresql/.s.PGSQL.5432" and retry.
+2020-11-21_18:43:56.54733 WARNING:  could not create Unix-domain socket in directory "/var/opt/gitlab/postgresql"
+2020-11-21_18:43:56.54775 FATAL:  could not create any Unix-domain sockets
+2020-11-21_18:43:56.54906 LOG:  database system is shut down
+2020-11-21_18:43:57.63808 LOG:  could not bind Unix address "/var/opt/gitlab/postgresql/.s.PGSQL.5432": File name too long
+2020-11-21_18:43:57.63842 HINT:  Is another postmaster already running on port 5432? If not, remove socket file "/var/opt/gitlab/postgresql/.s.PGSQL.5432" and retry.
+2020-11-21_18:43:57.63936 WARNING:  could not create Unix-domain socket in directory "/var/opt/gitlab/postgresql"
+2020-11-21_18:43:57.63985 FATAL:  could not create any Unix-domain sockets
+2020-11-21_18:43:57.64192 LOG:  database system is shut down
+2020-11-21_18:43:58.73210 LOG:  could not bind Unix address "/var/opt/gitlab/postgresql/.s.PGSQL.5432": File name too long
+2020-11-21_18:43:58.73233 HINT:  Is another postmaster already running on port 5432? If not, remove socket file "/var/opt/gitlab/postgresql/.s.PGSQL.5432" and retry.
+2020-11-21_18:43:58.73261 WARNING:  could not create Unix-domain socket in directory "/var/opt/gitlab/postgresql"
+2020-11-21_18:43:58.73288 FATAL:  could not create any Unix-domain sockets
+2020-11-21_18:43:58.73383 LOG:  database system is shut down
+2020-11-21_18:43:59.80287 LOG:  could not bind Unix address "/var/opt/gitlab/postgresql/.s.PGSQL.5432": File name too long
+2020-11-21_18:43:59.80324 HINT:  Is another postmaster already running on port 5432? If not, remove socket file "/var/opt/gitlab/postgresql/.s.PGSQL.5432" and retry.
+2020-11-21_18:43:59.80363 WARNING:  could not create Unix-domain socket in directory "/var/opt/gitlab/postgresql"
+2020-11-21_18:43:59.80396 FATAL:  could not create any Unix-domain sockets
+2020-11-21_18:43:59.80427 LOG:  database system is shut down
+2020-11-21_18:44:00.87217 LOG:  could not bind Unix address "/var/opt/gitlab/postgresql/.s.PGSQL.5432": File name too long
+2020-11-21_18:44:00.87243 HINT:  Is another postmaster already running on port 5432? If not, remove socket file "/var/opt/gitlab/postgresql/.s.PGSQL.5432" and retry.
+2020-11-21_18:44:00.87264 WARNING:  could not create Unix-domain socket in directory "/var/opt/gitlab/postgresql"
+2020-11-21_18:44:00.87286 FATAL:  could not create any Unix-domain sockets
+2020-11-21_18:44:00.87416 LOG:  database system is shut down
+2020-11-21_18:44:01.95243 LOG:  could not bind Unix address "/var/opt/gitlab/postgresql/.s.PGSQL.5432": File name too long
+2020-11-21_18:44:01.95265 HINT:  Is another postmaster already running on port 5432? If not, remove socket file "/var/opt/gitlab/postgresql/.s.PGSQL.5432" and retry.
+2020-11-21_18:44:01.95288 WARNING:  could not create Unix-domain socket in directory "/var/opt/gitlab/postgresql"
+2020-11-21_18:44:01.95313 FATAL:  could not create any Unix-domain sockets
+2020-11-21_18:44:01.95451 LOG:  database system is shut down
+2020-11-21_18:44:03.03403 LOG:  could not bind Unix address "/var/opt/gitlab/postgresql/.s.PGSQL.5432": File name too long
+2020-11-21_18:44:03.03434 HINT:  Is another postmaster already running on port 5432? If not, remove socket file "/var/opt/gitlab/postgresql/.s.PGSQL.5432" and retry.
+2020-11-21_18:44:03.03461 WARNING:  could not create Unix-domain socket in directory "/var/opt/gitlab/postgresql"
+2020-11-21_18:44:03.03482 FATAL:  could not create any Unix-domain sockets
+2020-11-21_18:44:03.03582 LOG:  database system is shut down
+2020-11-21_18:44:04.11138 LOG:  could not bind Unix address "/var/opt/gitlab/postgresql/.s.PGSQL.5432": File name too long
+2020-11-21_18:44:04.11161 HINT:  Is another postmaster already running on port 5432? If not, remove socket file "/var/opt/gitlab/postgresql/.s.PGSQL.5432" and retry.
+2020-11-21_18:44:04.11189 WARNING:  could not create Unix-domain socket in directory "/var/opt/gitlab/postgresql"
+2020-11-21_18:44:04.11215 FATAL:  could not create any Unix-domain sockets
+2020-11-21_18:44:04.11277 LOG:  database system is shut down
+2020-11-21_18:44:05.16112 LOG:  could not bind Unix address "/var/opt/gitlab/postgresql/.s.PGSQL.5432": File name too long
+2020-11-21_18:44:05.16135 HINT:  Is another postmaster already running on port 5432? If not, remove socket file "/var/opt/gitlab/postgresql/.s.PGSQL.5432" and retry.
+2020-11-21_18:44:05.16160 WARNING:  could not create Unix-domain socket in directory "/var/opt/gitlab/postgresql"
+2020-11-21_18:44:05.16183 FATAL:  could not create any Unix-domain sockets
+2020-11-21_18:44:05.16364 LOG:  database system is shut down
+2020-11-21_18:44:06.24149 LOG:  could not bind Unix address "/var/opt/gitlab/postgresql/.s.PGSQL.5432": File name too long
+2020-11-21_18:44:06.24181 HINT:  Is another postmaster already running on port 5432? If not, remove socket file "/var/opt/gitlab/postgresql/.s.PGSQL.5432" and retry.
+2020-11-21_18:44:06.24236 WARNING:  could not create Unix-domain socket in directory "/var/opt/gitlab/postgresql"
+2020-11-21_18:44:06.24272 FATAL:  could not create any Unix-domain sockets
+2020-11-21_18:44:06.24346 LOG:  database system is shut down
