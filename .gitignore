@@ -30,6 +30,7 @@
 ./zk-multiple-kafka-multiple/
 ./zk-single-kafka-single-full-stack/
 
+docker/jenkins/jenkins-casc/jenkins-casc-vol/
 
 target/
 bin/

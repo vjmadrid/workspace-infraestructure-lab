@@ -1,6 +1,229 @@
 FROM jenkins/jenkins:2.289.3
 
 #***********************************************************************************
+#      ____                                    _____           _     
+#     |  _ \ _ __ ___ _ __   __ _ _ __ ___    |_   _|__   ___ | |___ 
+#     | |_) | '__/ _ \ '_ \ / _` | '__/ _ \     | |/ _ \ / _ \| / __|
+#     |  __/| | |  __/ |_) | (_| | | |  __/     | | (_) | (_) | \__ \
+#     |_|   |_|  \___| .__/ \__,_|_|  \___|     |_|\___/ \___/|_|___/
+#                    |_|                                             
+#***********************************************************************************
+
+USER root
+
+ENV DEBIAN_FRONTEND=noninteractive
+
+
+
+# *************************
+# ***   Miscellaneous   ***
+# *************************
+
+RUN apt-get update \
+    && apt-get install curl htop build-essential iputils-ping vim make inotify-tools apt-utils --no-install-recommends -y \
+    && apt-get clean all \
+    && rm -rf /var/lib/apt/lists/*
+
+
+
+# *****************
+# ***   Maven   ***
+# *****************
+
+ENV MAVEN_VERSION=3.6.3
+
+
+# Install specific maven version by wget
+RUN wget https://archive.apache.org/dist/maven/maven-3/${MAVEN_VERSION}/binaries/apache-maven-${MAVEN_VERSION}-bin.tar.gz -O /usr/local/src/apache-maven-${MAVEN_VERSION}-bin.tar.gz \
+    && cd /usr/local/src/ && tar xzf apache-maven-${MAVEN_VERSION}-bin.tar.gz \
+    && mv /usr/local/src/apache-maven-${MAVEN_VERSION} /usr/share/maven \
+    && rm -rf /usr/local/src/apache-maven-${MAVEN_VERSION}-bin.tar.gz
+
+# Install latest maven version by package
+#RUN apt-get update \
+#    && apt-get install maven --no-install-recommends -y \
+#    && apt-get clean all \
+#    && rm -rf /var/lib/apt/lists/*
+
+# Install latest maven version by curl
+#RUN curl --silent --show-error --location --fail --retry 3 --output /tmp/apache-maven.tar.gz  https://www.apache.org/dist/maven/maven-3/${MAVEN_VERSION}/binaries/apache-maven-${MAVEN_VERSION}-bin.tar.gz   \
+#    && tar xf /tmp/apache-maven.tar.gz -C /opt/ \
+#    && ln -s /opt/apache-maven-* /usr/share/maven \
+#    && rm /tmp/apache-maven.tar.gz  
+
+
+ENV MAVEN_HOME /usr/share/maven/
+ENV PATH $PATH:$MAVEN_HOME/bin
+
+
+
+# ***************
+# ***   Ant   ***
+# ***************
+
+ENV ANT_VERSION=1.10.9
+
+
+# Install specific ant version by wget
+RUN wget https://archive.apache.org/dist/ant/binaries/apache-ant-${ANT_VERSION}-bin.tar.gz -O /usr/local/src/apache-ant-${ANT_VERSION}-bin.tar.gz \
+    && cd /usr/local/src/ && tar xzf apache-ant-${ANT_VERSION}-bin.tar.gz \
+    && mv /usr/local/src/apache-ant-${ANT_VERSION} /usr/share/ant \
+    && rm -rf /usr/local/src/apache-ant-${ANT_VERSION}-bin.tar.gz
+
+# Install latest ant version by package
+#RUN apt-get update \
+#    && apt-get install ant --no-install-recommends -y \
+#    && apt-get clean all \
+#    && rm -rf /var/lib/apt/lists/*
+
+# Install latest ant version by curl
+#RUN curl --silent --show-error --location --fail --retry 3 --output /tmp/apache-ant.tar.gz https://archive.apache.org/dist/ant/binaries/apache-ant-${ANT_VERSION}-bin.tar.gz  \
+#    && tar xf /tmp/apache-ant.tar.gz -C /opt/ \  
+#    && ln -s /opt/apache-ant-* /opt/apache-ant \
+#    && rm -rf /tmp/apache-ant.tar.gz   
+    
+
+ENV ANT_HOME /usr/share/ant
+ENV PATH $PATH:$ANT_HOME/bin
+
+
+
+# ******************
+# ***   Gradle   ***
+# ******************
+
+ENV GRADLE_VERSION=6.8.3
+
+# Install specific gradle version by wget
+RUN wget https://services.gradle.org/distributions/gradle-${GRADLE_VERSION}-bin.zip -O /usr/local/src/gradle-${GRADLE_VERSION}-bin.zip \
+    && cd /usr/local/src/ && unzip gradle-${GRADLE_VERSION}-bin.zip \
+    && mv /usr/local/src/gradle-${GRADLE_VERSION} /usr/share/gradle \
+    && rm -rf /usr/local/src/gradle-${GRADLE_VERSION}-bin.zip
+
+# Install latest gradle version by package
+#RUN apt-get update \
+#    && apt-get install gradle --no-install-recommends -y \
+#    && apt-get clean all \
+#    && rm -rf /var/lib/apt/lists/*
+
+# Install latest gradle version by curl
+#RUN curl --silent --show-error --location --fail --retry 3 --output /tmp/gradle.zip  https://services.gradle.org/distributions/gradle-${GRADLE_VERSION}-bin.zip  \ 
+#    && unzip -d /opt /tmp/gradle.zip \ 
+#    && ln -s /opt/gradle-* /opt/gradle \ 
+#    && rm /tmp/gradle.zip    
+    
+
+ENV GRADLE_HOME=/usr/share/gradle
+ENV PATH=$GRADLE_HOME/bin:$PATH
+
+
+
+# *******************
+# ***   Node.js   ***
+# *******************
+
+ENV NODE_JS_VERSION=10
+
+# Install latest node version by package
+RUN curl -sL https://deb.nodesource.com/setup_${NODE_JS_VERSION}.x | bash - \
+    && apt-get install -y nodejs \
+    && apt-get purge apt-transport-https lsb-release -y \
+    && apt-get -y autoremove -y \
+    && apt-get clean all \
+    && rm -rf /var/lib/apt/lists/* /etc/apt/sources.list.d/nodesource.list
+
+
+
+# *******************
+# ***   Newman    ***
+# *******************
+
+RUN npm install -g newman \
+    && npm install newman-reporter-html
+
+
+
+# **************************
+# ***   Sonar-scanner    ***
+# **************************
+
+ENV SONAR_SCANNER_VERSION=3.3.0.1492
+
+# Install specific gradle version by wget
+RUN wget https://repo1.maven.org/maven2/org/sonarsource/scanner/cli/sonar-scanner-cli/${SONAR_SCANNER_VERSION}/sonar-scanner-cli-${SONAR_SCANNER_VERSION}.zip -O /usr/local/src/sonar-scanner-cli-${SONAR_SCANNER_VERSION}.zip  \
+    && cd /usr/local/src/ && unzip sonar-scanner-cli-${SONAR_SCANNER_VERSION}.zip \
+    && mv /usr/local/src/sonar-scanner-${SONAR_SCANNER_VERSION} /usr/share/sonar-scanner-cli \
+    && rm -rf /usr/local/src/sonar-scanner-cli-${SONAR_SCANNER_VERSION}.zip
+
+ENV SONAR_RUNNER_HOME=/usr/share/sonar-scanner-cli
+ENV PATH=$SONAR_RUNNER_HOME/bin:$PATH
+
+
+
+# *******************
+# ***   Docker    ***
+# *******************
+
+ENV DOCKER_VERSION=19.03.12
+
+
+# Install specific docker version by wget
+RUN wget https://download.docker.com/linux/static/stable/x86_64/docker-${DOCKER_VERSION}.tgz -O /usr/local/src/docker-${DOCKER_VERSION}.tgz \ 
+    && cd /usr/local/src/ && tar xzvf docker-${DOCKER_VERSION}.tgz \
+    && mv /usr/local/src/docker/* /usr/local/bin \
+    && rm -rf /usr/local/src/docker-${DOCKER_VERSION}.tgz
+
+# Install latest docker version by package
+#RUN apt update && apt install -y lsb-release \
+#    software-properties-common \
+#    apt-transport-https \
+#    && rm -rf /var/lib/apt/lists/*
+
+#RUN curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add - \
+#    && add-apt-repository "deb [arch=amd64] \
+#    https://download.docker.com/linux/debian $(lsb_release -cs) stable" \
+#    && apt update && apt install -y docker-ce-cli \
+#    && rm -rf /var/lib/apt/lists/*
+
+
+# *******************
+# ***   APM       ***
+# *******************
+
+#COPY bin/elastic-apm-agent-1.6.1.jar /usr/local/bin/
+
+
+
+# *****************
+# ***   JQ      ***
+# *****************
+
+RUN JQ_URL="https://circle-downloads.s3.amazonaws.com/circleci-images/cache/linux-amd64/jq-latest" \
+    && curl --silent --show-error --location --fail --retry 3 --output /usr/bin/jq $JQ_URL \
+    && chmod +x /usr/bin/jq \
+    && jq --version
+
+
+
+# ***********************
+# ***   Kubernetes    ***
+# ***********************
+
+#ENV KUBE_VERSION=v1.17.2
+
+#RUN wget https://storage.googleapis.com/kubernetes-release/release/${KUBE_VERSION}/kubernetes-server-linux-amd64.tar.gz -O /usr/local/src/kubernetes-server-linux-amd64.tar.gz \
+#    && tar -zxvf /usr/local/src/kubernetes-server-linux-amd64.tar.gz  \
+#        --strip-components=3 -C /usr/local/bin \
+#        kubernetes/server/bin/kubectl \
+#    && rm -rf /usr/local/src/kubernetes-server-linux-amd64.tar.gz
+
+
+# *** Clean  ***
+RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /etc/apt/sources.list.d/nodesource.list
+
+USER jenkins
+
+#***********************************************************************************
 #     ____                                        _            _    _           
 #    |  _ \ _ __ ___ _ __   __ _ _ __ ___        | | ___ _ __ | | _(_)_ __  ___ 
 #    | |_) | '__/ _ \ '_ \ / _` | '__/ _ \    _  | |/ _ \ '_ \| |/ / | '_ \/ __|
@@ -39,200 +262,5 @@ RUN /usr/local/bin/install-plugins.sh < /usr/share/jenkins/ref/plugins.txt
 
 
 
-
-#***********************************************************************************
-#      ____                                    _____           _     
-#     |  _ \ _ __ ___ _ __   __ _ _ __ ___    |_   _|__   ___ | |___ 
-#     | |_) | '__/ _ \ '_ \ / _` | '__/ _ \     | |/ _ \ / _ \| / __|
-#     |  __/| | |  __/ |_) | (_| | | |  __/     | | (_) | (_) | \__ \
-#     |_|   |_|  \___| .__/ \__,_|_|  \___|     |_|\___/ \___/|_|___/
-#                    |_|                                             
-#***********************************************************************************
-
-USER root
-
-ENV DEBIAN_FRONTEND=noninteractive
-
-
-
-# *************************
-# ***   Miscellaneous   ***
-# *************************
-
-RUN apt-get update \
-    && apt-get install curl htop build-essential iputils-ping vim make inotify-tools --no-install-recommends -y \
-    && apt-get clean all \
-    && rm -rf /var/lib/apt/lists/*
-
-
-
-# *****************
-# ***   Maven   ***
-# *****************
-
-ENV MAVEN_VERSION=3.5.4
-
-# Install specific maven version by wget
-RUN wget https://archive.apache.org/dist/maven/maven-3/${MAVEN_VERSION}/binaries/apache-maven-${MAVEN_VERSION}-bin.tar.gz -O /usr/local/src/apache-maven-${MAVEN_VERSION}-bin.tar.gz \
-    && cd /usr/local/src/ && tar xzf apache-maven-${MAVEN_VERSION}-bin.tar.gz \
-    && mv /usr/local/src/apache-maven-${MAVEN_VERSION} /usr/share/maven \
-    && rm -rf /usr/local/src/apache-maven-${MAVEN_VERSION}-bin.tar.gz
-
-# Install latest maven version by package
-#RUN apt-get update \
-#    && apt-get install maven --no-install-recommends -y \
-#    && apt-get clean all \
-#    && rm -rf /var/lib/apt/lists/*
-
-ENV MAVEN_HOME /usr/share/maven/
-ENV PATH $PATH:$MAVEN_HOME/bin
-
-
-
-# ***************
-# ***   Ant   ***
-# ***************
-
-ENV ANT_VERSION=1.10.1
-
-# Install specific ant version by wget
-RUN wget https://archive.apache.org/dist/ant/binaries/apache-ant-${ANT_VERSION}-bin.tar.gz -O /usr/local/src/apache-ant-${ANT_VERSION}-bin.tar.gz \
-    && cd /usr/local/src/ && tar xzf apache-ant-${ANT_VERSION}-bin.tar.gz \
-    && mv /usr/local/src/apache-ant-${ANT_VERSION} /usr/share/ant \
-    && rm -rf /usr/local/src/apache-ant-${ANT_VERSION}-bin.tar.gz
-
-# Install latest ant version by package
-#RUN apt-get update \
-#    && apt-get install ant --no-install-recommends -y \
-#    && apt-get clean all \
-#    && rm -rf /var/lib/apt/lists/*
-
-ENV ANT_HOME /usr/share/ant
-ENV PATH $PATH:$ANT_HOME/bin
-
-
-
-# ******************
-# ***   Gradle   ***
-# ******************
-
-ENV GRADLE_VERSION=4.10.2
-
-# Install specific gradle version by wget
-RUN wget https://services.gradle.org/distributions/gradle-${GRADLE_VERSION}-bin.zip -O /usr/local/src/gradle-${GRADLE_VERSION}-bin.zip \
-    && cd /usr/local/src/ && unzip gradle-${GRADLE_VERSION}-bin.zip \
-    && mv /usr/local/src/gradle-4.10.2 /usr/local/gradle \
-    && rm -rf /usr/local/src/gradle-${GRADLE_VERSION}-bin.zip
-
-# Install latest gradle version by package
-#RUN apt-get update \
-#    && apt-get install gradle --no-install-recommends -y \
-#    && apt-get clean all \
-#    && rm -rf /var/lib/apt/lists/*
-
-ENV GRADLE_HOME=/usr/local/gradle
-ENV PATH=$GRADLE_HOME/bin:$PATH
-
-
-
-# *******************
-# ***   Node.js   ***
-# *******************
-
-ENV NODE_JS_VERSION=10
-
-# Nodejs
-RUN curl -sL https://deb.nodesource.com/setup_${NODE_JS_VERSION}.x | bash - \
-    && apt-get install -y nodejs \
-    && apt-get purge apt-transport-https lsb-release -y \
-    && apt-get -y autoremove -y \
-    && apt-get clean all \
-    && rm -rf /var/lib/apt/lists/* /etc/apt/sources.list.d/nodesource.list
-
-
-
-# *******************
-# ***   Newman    ***
-# *******************
-
-RUN npm install -g newman \
-    && npm install newman-reporter-html
-
-
-
-# **************************
-# ***   Sonar-scanner    ***
-# **************************
-
-ENV SONAR_SCANNER_VERSION=3.3.0.1492
-
-# Install specific gradle version by wget
-RUN wget https://repo1.maven.org/maven2/org/sonarsource/scanner/cli/sonar-scanner-cli/${SONAR_SCANNER_VERSION}/sonar-scanner-cli-${SONAR_SCANNER_VERSION}.zip -O /usr/local/src/sonar-scanner-cli-${SONAR_SCANNER_VERSION}.zip  \
-    && cd /usr/local/src/ && unzip sonar-scanner-cli-${SONAR_SCANNER_VERSION}.zip \
-    && mv /usr/local/src/sonar-scanner-${SONAR_SCANNER_VERSION} /usr/local/sonar-scanner-cli \
-    && rm -rf /usr/local/src/sonar-scanner-cli-${SONAR_SCANNER_VERSION}.zip
-
-ENV SONAR_RUNNER_HOME=/usr/local/sonar-scanner-cli
-ENV PATH=$SONAR_RUNNER_HOME/bin:$PATH
-
-
-
-# *******************
-# ***   Docker    ***
-# *******************
-
-ENV DOCKER_CHANNEL=stable
-ENV DOCKER_VERSION=18.06.1-ce
-
-# Install specific gradle version by wget
-#RUN wget https://mirrors.tuna.tsinghua.edu.cn/docker-ce/linux/static/${DOCKER_CHANNEL}/x86_64/docker-${DOCKER_VERSION}.tgz -O /usr/local/src/docker-${DOCKER_VERSION}.tgz \
-#    && cd /usr/local/src/ && tar --strip-components=1 -xvzf docker-${DOCKER_VERSION}.tgz -C /usr/local/bin \
-#    && rm -rf /usr/local/src/docker-${DOCKER_VERSION}.tgz
-
-#Docker 2
-#RUN apt update && apt install -y lsb-release \
-#    software-properties-common \
-#    apt-transport-https \
-#    && rm -rf /var/lib/apt/lists/*
-
-#RUN curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add - \
-#    && add-apt-repository "deb [arch=amd64] \
-#    https://download.docker.com/linux/debian $(lsb_release -cs) stable" \
-#    && apt update && apt install -y docker-ce-cli \
-#    && rm -rf /var/lib/apt/lists/*
-
-
-
-# *******************
-# ***   APM       ***
-# *******************
-
-#COPY bin/elastic-apm-agent-1.6.1.jar /usr/local/bin/
-
-
-
-# *****************
-# ***   JQ      ***
-# *****************
-
-RUN JQ_URL="https://circle-downloads.s3.amazonaws.com/circleci-images/cache/linux-amd64/jq-latest" \
-    && curl --silent --show-error --location --fail --retry 3 --output /usr/bin/jq $JQ_URL \
-    && chmod +x /usr/bin/jq \
-    && jq --version
-
-
-# *** Smoke Test ***
-RUN java -version \
-    && mvn -version \
-    && ant -version \
-    && gradle -version \
-    && node -v \
-    && npm -v \
-    && newman -v
-
-# *** Clean  ***
-RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /etc/apt/sources.list.d/nodesource.list
-
-USER jenkins
 
 WORKDIR $JENKINS_HOME

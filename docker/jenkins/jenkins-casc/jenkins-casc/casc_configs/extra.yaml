@@ -85,28 +85,39 @@ unclassified:
 
 
 # *************************
-# global setting
+#     global setting
+# *************************
 tool:
   jdk:
     installations:
-      - home: "/opt/java/openjdk"
-        name: "Default"
+      - name: "Default"
+        home: "/opt/java/openjdk"
   gradle:
     installations:
-      - home: "/usr/local/gradle"
-        name: "Default"
+      - name: "Default"
+        home: "/usr/local/gradle"
   ant:
     installations:
-      - home: "/usr/share/ant"
-        name: "Default"
+      - name: "Default"
+        home: "/usr/share/ant"
   maven:
     installations:
       - home: "/usr/share/maven"
         name: "Default"
-#  git:
-#    installations:
-#    - home: "/usr/bin/git"
-#      name: "Default"
+  nodejs:
+    installations:
+      - name: "NodeJS Latest"
+        home: "" #required until nodejs-1.3.4 release (JENKINS-57508)
+        properties:
+          - installSource:
+              installers:
+                - nodeJSInstaller:
+                    id: "12.11.1"
+                    npmPackagesRefreshHours: 48 #default is 72
+  git:
+    installations:
+      - name: "Default"
+        home: "/usr/bin/git"
 
 
 
