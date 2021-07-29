@@ -28,6 +28,9 @@ jenkins:
       excludeClientIPFromCrumb: true
 
   # *** Define Views ***
+  primaryView:
+    all:
+      name: "all"
   
   myViewsTabBar: "standard"
   #views:
@@ -47,32 +50,32 @@ jenkins:
     - permanent:
         name: "jenkins-worker-1"
         labelString: "Linux Jenkins Worker 1"
-        mode: NORMAL
+        #mode: NORMAL
         numExecutors: 1
-        remoteFS: "/var/lib/jenkins"
+        remoteFS: "/var/jenkins_home"
         retentionStrategy: "always"
         launcher:
           ssh:
             credentialsId: ssh_with_passphrase_provided
             host: "jenkins-worker-1"
             port: 22
-            launchTimeoutSeconds: 60
+            launchTimeoutSeconds: 210
             maxNumRetries: 3
             retryWaitTime: 30
             sshHostKeyVerificationStrategy: "nonVerifyingKeyVerificationStrategy"
     - permanent:
         name: "jenkins-worker-2"
         labelString: "Linux Jenkins Worker 2"
-        mode: NORMAL
+        #mode: NORMAL
         numExecutors: 1
-        remoteFS: "/var/lib/jenkins"
+        remoteFS: "/var/jenkins_home"
         retentionStrategy: "always"
         launcher:
           ssh:
             credentialsId: ssh_with_passphrase_provided
             host: "jenkins-worker-2"
             port: 22
-            launchTimeoutSeconds: 60
+            launchTimeoutSeconds: 210
             maxNumRetries: 3
             retryWaitTime: 30
             sshHostKeyVerificationStrategy: "nonVerifyingKeyVerificationStrategy"
@@ -94,12 +97,15 @@ jenkins:
   
   # Define authorization strategy
   authorizationStrategy:
-    # METHOD 1 : global matrix -> Reqwuire https://plugins.jenkins.io/matrix-auth
-    globalMatrix:
-      permissions:
-        # Sintax : <permission-group>/<permission-name>:<role>
-        - "Overall/Administer:admin"
-        - "Overall/Read:authenticated"
+    # METHOD 1 : xxx
+    loggedInUsersCanDoAnything:
+      allowAnonymousRead: false
+    # METHOD 2 : global matrix -> Reqwuire https://plugins.jenkins.io/matrix-auth
+#    globalMatrix:
+#      permissions:
+#        # Sintax : <permission-group>/<permission-name>:<role>
+#        - "Overall/Administer:admin"
+#        - "Overall/Read:authenticated"
         #- "Job/Build:dev"
         #- "Job/Cancel:dev"
         #- "Job/Read:dev"
@@ -108,7 +114,7 @@ jenkins:
         #- "Overall/Read:authenticated"
         #- "Run/Replay:dev"
         #- "Run/Update:dev"
-    # METHOD 2 : roleBased
+    # METHOD 3 : roleBased
     #roleBased:
       #roles:
         #global:
@@ -129,7 +135,17 @@ jenkins:
   
   
 # USE plugin authorize-project:latest provices a new authorization strategy
-#security:
+security:
+  apiToken:
+    creationOfLegacyTokenEnabled: false
+    tokenGenerationOnCreationEnabled: false
+    usageStatisticsEnabled: true
+  #downloadSettings:
+  #  useBrowser: false
+  #remotingCLI:
+  #  enabled: false
+  #sSHD:
+  #  port: -1
 #  queueItemAuthenticator:
 #    authenticators:
 #    - global:

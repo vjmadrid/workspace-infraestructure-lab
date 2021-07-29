@@ -1,7 +1,9 @@
+ansible:latest
 ant:latest
 antisamy-markup-formatter:latest
 bouncycastle-api:latest
 blueocean:latest
+blueocean-jira:latest
 build-timeout:latest
 build-with-parameters:latest
 cloudbees-folder:latest
@@ -38,9 +40,11 @@ rebuild:latest
 role-strategy:latest
 slack:latest
 ssh-credentials:latest
-ssh-slaves:latest
 ssh-agent:latest
+ssh-slaves:latest
+ssh-steps:latest
 sonar:latest
+terraform:latest
 timestamper:latest
 windows-slaves:latest
 workflow-aggregator:latest
