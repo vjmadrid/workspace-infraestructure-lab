@@ -1,0 +1,174 @@
+
+unclassified:
+
+  # *** Define Jenkins Location ***
+  #     Manage Jenkins -> Configure System -> "Jenkins Location" Section ***
+  location:
+    url: http://localhost:8080/
+    adminAddress: support@acme.com
+
+  # *** Define Serve resource files from another domain ***
+  #     Manage Jenkins -> Configure System -> "Serve resource files from another domain" Section ***
+  
+  # N/A
+
+  # *** Define Global Pipeline Libraries ***
+  #     Manage Jenkins -> Configure System -> "Global Pipeline Libraries" Section ***
+  globalLibraries:
+    libraries: 
+      # Importante mirar el enlace https://github.com/Praqma/shared-pipeline
+      - name: "praqma-shared@master"
+        implicit: true
+        defaultVersion: "master"
+        retriever:
+          modernSCM:
+            scm:
+              git:
+                remote: "https://github.com/Praqma/shared-pipeline.git"
+      - name: "awesome-lib"
+        retriever:
+          modernSCM:
+            scm:
+              git:
+                remote: "https://github.com/jenkins-infra/pipeline-library.git"
+
+  # *** Define Git plugin ***
+  #     Manage Jenkins -> Configure System -> "Git plugin" Section ***
+  gitSCM:
+    createAccountBasedOnEmail: false
+  
+  # *** Define Shell ***
+  #     Manage Jenkins -> Configure System -> "Shell" Section ***
+  shell:
+    shell: "/bin/bash"
+
+  # *** Define Extended E-mail Notification ***
+  #     Manage Jenkins -> Configure System -> "Extended E-mail Notification" Section ***
+  
+  #extendedEmailPublisher:
+    # smtpHost: "xxx"
+    # smtpPort: 25
+    # smtpUsername: "xxx"
+    # smtpPassword: "xxx"
+    #useSsl: false
+    #useTls: false
+    # advProperties: "xxx"
+    #adminRequiredForTemplateTesting: false
+    #allowUnregisteredEnabled: false
+    #charset: "UTF-8"
+    #debugMode: false
+    #defaultBody: "$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS:\n\nCheck\
+    #  \ console output at $BUILD_URL to view the results."
+    #defaultSubject: "$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS!"
+    #maxAttachmentSize: -1
+    #maxAttachmentSizeMb: 0
+    #precedenceBulk: false
+    #watchingEnabled: false
+  
+  # *** Define Timestamper ***
+  #     Manage Jenkins -> Configure System -> "Timestamper" Section ***
+  timestamper:
+    systemTimeFormat: "'<b>'HH:mm:ss'</b> '"
+    elapsedTimeFormat: "'<b>'HH:mm:ss.S'</b> '"
+    allPipelines: false
+  
+  # *** Define E-mail Notification ***
+  #     Manage Jenkins -> Configure System -> "E-mail Notification" Section ***
+  mailer:
+    smtpHost: smtp.acme.org
+    # Advanced
+    useSsl: false
+    useTls: false
+    smtpPort: 4441
+    replyToAddress: do-not-reply@acme.org
+    charset: "UTF-8"
+
+
+# *************************
+# global setting
+tool:
+  jdk:
+    installations:
+      - home: "/opt/java/openjdk"
+        name: "Default"
+  gradle:
+    installations:
+      - home: "/usr/local/gradle"
+        name: "Default"
+  ant:
+    installations:
+      - home: "/usr/share/ant"
+        name: "Default"
+  maven:
+    installations:
+      - home: "/usr/share/maven"
+        name: "Default"
+#  git:
+#    installations:
+#    - home: "/usr/bin/git"
+#      name: "Default"
+
+
+
+
+credentials:
+  system:
+    domainCredentials:
+      - credentials:
+        - usernamePassword:
+            scope:    GLOBAL
+            id:       github-user
+            username: vjmadrid
+            password: ${github:-githubPassw0rd}
+            description: github username/password
+        #- usernamePassword2:
+        #    description: "Slave SSH User"
+        #    id: "SlaveSSHAuth"
+        #    scope: GLOBAL
+        #    username: "root"
+        #    password: "root"
+        - basicSSHUserPrivateKey:
+            scope: SYSTEM
+            id: ssh_with_passphrase_provided
+            username: jenkins
+            description: "SSH passphrase with private key file"
+            privateKeySource:
+              directEntry:
+                privateKey: "-----BEGIN OPENSSH PRIVATE KEY-----
+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
+-----END OPENSSH PRIVATE KEY-----"

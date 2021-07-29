@@ -1,0 +1,136 @@
+jenkins:
+
+  # *** Define Login Configuration ***
+  disableRememberMe: false
+  markupFormatter: "plainText"
+
+  # *** Define General Configuration ***
+  #     Manage Jenkins -> Configure System -> General Section ***
+  systemMessage: "\n\nDemo setup for Jenkins Configuration as Code plugin JCasc...\n\n"
+  numExecutors: 0
+  labelString: "jenkins-master"
+  mode: NORMAL
+  quietPeriod: 5
+  scmCheckoutRetryCount: 3
+  projectNamingStrategy: "standard"
+  # * Enable agent to controller access control
+  #   true : disables Agent -> Master Access Control
+  #   false : enables
+  remotingSecurity:
+    enabled: true
+  slaveAgentPort: 50000
+  updateCenter:
+    sites:
+    - id: "default"
+      url: "https://updates.jenkins.io/update-center.json"
+  crumbIssuer:
+    standard:
+      excludeClientIPFromCrumb: true
+
+  # *** Define Views ***
+  
+  myViewsTabBar: "standard"
+  #views:
+  #  - all:
+  #    name: "all"
+
+  # *** Define Global Properties ***
+  #     Manage Jenkins -> Configure System -> "Global properties" Section ***
+  globalNodeProperties:
+    - envVars:
+        env:
+          - key: EXAMPLE_VAR
+            value: 123456
+
+  # *** Configure Nodes ***
+  nodes:
+    - permanent:
+        name: "jenkins-worker-1"
+        labelString: "Linux Jenkins Worker 1"
+        mode: NORMAL
+        numExecutors: 1
+        remoteFS: "/var/lib/jenkins"
+        retentionStrategy: "always"
+        launcher:
+          ssh:
+            credentialsId: ssh_with_passphrase_provided
+            host: "jenkins-worker-1"
+            port: 22
+            launchTimeoutSeconds: 60
+            maxNumRetries: 3
+            retryWaitTime: 30
+            sshHostKeyVerificationStrategy: "nonVerifyingKeyVerificationStrategy"
+    - permanent:
+        name: "jenkins-worker-2"
+        labelString: "Linux Jenkins Worker 2"
+        mode: NORMAL
+        numExecutors: 1
+        remoteFS: "/var/lib/jenkins"
+        retentionStrategy: "always"
+        launcher:
+          ssh:
+            credentialsId: ssh_with_passphrase_provided
+            host: "jenkins-worker-2"
+            port: 22
+            launchTimeoutSeconds: 60
+            maxNumRetries: 3
+            retryWaitTime: 30
+            sshHostKeyVerificationStrategy: "nonVerifyingKeyVerificationStrategy"
+  
+  # *** Define authentication strategy ***
+  securityRealm:
+    # local : use basic authentication -> require ID/username and password
+    local:
+      # Prevent anonymous users from creating an account
+      allowsSignup: false
+      # Define users
+      users:
+        - id: ${JENKINS_ADMIN_ID}
+          password: ${JENKINS_ADMIN_PASSWORD}
+        - id: adminsecret
+          password: ${adminsecretpw}
+        - id: "user"
+          password: "user"
+  
+  # Define authorization strategy
+  authorizationStrategy:
+    # METHOD 1 : global matrix -> Reqwuire https://plugins.jenkins.io/matrix-auth
+    globalMatrix:
+      permissions:
+        # Sintax : <permission-group>/<permission-name>:<role>
+        - "Overall/Administer:admin"
+        - "Overall/Read:authenticated"
+        #- "Job/Build:dev"
+        #- "Job/Cancel:dev"
+        #- "Job/Read:dev"
+        #- "Job/Workspace:dev"
+        #- "Overall/Administer:admin"
+        #- "Overall/Read:authenticated"
+        #- "Run/Replay:dev"
+        #- "Run/Update:dev"
+    # METHOD 2 : roleBased
+    #roleBased:
+      #roles:
+        #global:
+          #- name: "admin"
+            #description: "Jenkins administrators"
+            #permissions:
+            #  - "Overall/Administer"
+            #assignments:
+            #  - "admin"
+          #- name: "readonly"
+            #description: "Read-only users"
+            #permissions:
+              #- "Overall/Read"
+              #- "Job/Read"
+            #assignments:
+              #- "authenticated"
+  
+  
+  
+# USE plugin authorize-project:latest provices a new authorization strategy
+#security:
+#  queueItemAuthenticator:
+#    authenticators:
+#    - global:
+#        strategy: triggeringUsersAuthorizationStrategy

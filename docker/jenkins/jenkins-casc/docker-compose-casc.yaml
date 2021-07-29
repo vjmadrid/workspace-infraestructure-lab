@@ -1,0 +1,64 @@
+version: '3.7'
+
+services:
+
+   jenkins-master:
+      build: ./jenkins-casc
+      container_name: jenkins-master
+      volumes:
+         - ./jenkins-casc-vol/master/home:/var/jenkins_home
+         - ./jenkins-casc/casc_configs:/var/jenkins_conf/casc_configs
+         - ./jenkins-casc/keys:/var/jenkins_home/.ssh
+         #- /var/run/docker.sock:/var/run/docker.sock:ro
+      ports:
+         # Port UI
+         - "8080:8080"
+         # Port agents TCP Connection 
+         - "50000:50000"
+      environment:
+         JENKINS_ADMIN_ID: admin
+         JENKINS_ADMIN_PASSWORD: password
+         CASC_JENKINS_CONFIG: /var/jenkins_conf/casc_configs
+      secrets:
+         - adminsecretpw
+      networks:
+         - jenkins-net
+      depends_on:
+         - jenkins-worker-1
+         - jenkins-worker-2
+
+   jenkins-worker-1:
+      build:
+         context: ./jenkins-worker
+         dockerfile: Dockerfile.ssh.agent
+      container_name: jenkins-worker-1
+      environment:
+         JAVA_OPTS: "-Dfile.encoding=UTF-8"
+      volumes:
+         - ./jenkins-casc-vol/worker-1/home:/var/jenkins_home
+         - ./jenkins-casc/keys:/var/lib/jenkins/.ssh
+         #- /var/run/docker.sock:/var/run/docker.sock
+      networks:
+         - jenkins-net
+
+   jenkins-worker-2:
+      build:
+         context: ./jenkins-worker
+         dockerfile: Dockerfile.ssh.agent
+      container_name: jenkins-worker-2
+      environment:
+         JAVA_OPTS: "-Dfile.encoding=UTF-8"
+      volumes:
+         - ./jenkins-casc-vol/worker-2/home:/var/jenkins_home
+         - ./jenkins-casc/keys:/var/lib/jenkins/.ssh
+         #- /var/run/docker.sock:/var/run/docker.sock
+      networks:
+         - jenkins-net
+
+secrets:
+   adminsecretpw:
+      file: ./jenkins-casc/secrets/admin.txt
+
+networks:
+   jenkins-net:
+      # external: true
