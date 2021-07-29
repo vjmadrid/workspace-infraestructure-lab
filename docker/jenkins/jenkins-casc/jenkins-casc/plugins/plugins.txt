@@ -9,12 +9,15 @@ build-with-parameters:latest
 cloudbees-folder:latest
 command-launcher:latest
 configuration-as-code:latest
+copyartifact:latest
 credentials:latest
 credentials-binding:latest
+docker-build-publish:latest
 docker-plugin:latest
 docker-workflow:latest
 email-ext:latest
 git:latest
+github:latest
 github-branch-source:latest
 github-api:latest
 gradle:latest
