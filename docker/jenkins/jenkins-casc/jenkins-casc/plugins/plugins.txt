@@ -36,6 +36,9 @@ jdk-tool:latest
 job-dsl:latest
 junit:latest
 pam-auth:latest
+pipeline-aggregator-view:latest
+pipeline-maven:latest
+pipeline-model-declarative-agent:latest
 pipeline-github-lib:latest
 pipeline-stage-view:latest
 pipeline-utility-steps:latest
