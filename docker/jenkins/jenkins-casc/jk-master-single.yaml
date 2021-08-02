@@ -1,0 +1,40 @@
+version: '3.7'
+
+services:
+
+   jenkins-master:
+      build: 
+         context: ./master
+         dockerfile: Dockerfile.jk-master-single
+      container_name: jenkins-master
+      volumes:
+         - ./jk-master-single-vol/master/home:/var/jenkins_home
+         - ./master/casc-config-jk-master-single:/var/jenkins_conf/casc_configs
+         - ./master/keys:/var/jenkins_home/.ssh
+         - /var/run/docker.sock:/var/run/docker.sock:ro
+      ports:
+         # Port UI
+         - "8080:8080"
+         # Port agents TCP Connection 
+         - "50000:50000"
+      environment:
+         JENKINS_ADMIN_ID: admin
+         JENKINS_ADMIN_PASSWORD: password
+         CASC_JENKINS_CONFIG: /var/jenkins_conf/casc_configs
+      secrets:
+         - adminsecretpw
+      networks:
+         - jenkins-net
+      healthcheck:
+         test: ["CMD-SHELL", "curl -s  http://127.0.0.1:8080 -o /dev/null || exit 1"]
+         interval: 30s
+         timeout: 5s
+         retries: 3
+
+secrets:
+   adminsecretpw:
+      file: ./master/secrets/admin.txt
+
+networks:
+   jenkins-net:
+      # external: true

@@ -1,0 +1,138 @@
+jenkins:
+
+  # *** Define Login Configuration ***
+  disableRememberMe: false
+  markupFormatter: "plainText"
+
+  # *** Define General Configuration ***
+  #     Manage Jenkins -> Configure System -> General Section ***
+  systemMessage: "\n\nDemo setup for Jenkins Configuration as Code plugin JCasc...\n\n"
+  numExecutors: 0
+  labelString: "jenkins-master"
+  mode: NORMAL
+  quietPeriod: 5
+  scmCheckoutRetryCount: 3
+  projectNamingStrategy: "standard"
+  # * Enable agent to controller access control
+  #   true : disables Agent -> Master Access Control
+  #   false : enables
+  remotingSecurity:
+    enabled: false
+  slaveAgentPort: 50000
+  updateCenter:
+    sites:
+    - id: "default"
+      url: "https://updates.jenkins.io/update-center.json"
+  crumbIssuer:
+    standard:
+      excludeClientIPFromCrumb: true
+
+  # *** Define Views ***
+  primaryView:
+    all:
+      name: "all"
+  
+  myViewsTabBar: "standard"
+  #views:
+  #  - all:
+  #    name: "all"
+
+  # *** Define Global Properties ***
+  #     Manage Jenkins -> Configure System -> "Global properties" Section ***
+  globalNodeProperties:
+    - envVars:
+        env:
+          - key: EXAMPLE_VAR
+            value: 123456
+
+  # *** Configure Nodes ***
+  # N/A
+  
+  # *** Define authentication strategy ***
+  securityRealm:
+    # local : use basic authentication -> require ID/username and password
+    local:
+      # Prevent anonymous users from creating an account
+      allowsSignup: false
+      # Define users
+      users:
+        - id: ${JENKINS_ADMIN_ID}
+          password: ${JENKINS_ADMIN_PASSWORD}
+        - id: adminsecret
+          password: ${adminsecretpw}
+        - id: "user"
+          password: "user"
+  
+  # Define authorization strategy
+  authorizationStrategy:
+    # METHOD 1 : xxx
+    loggedInUsersCanDoAnything:
+      allowAnonymousRead: false
+    # METHOD 2 : global matrix -> Reqwuire https://plugins.jenkins.io/matrix-auth
+#    globalMatrix:
+#      permissions:
+#        # Sintax : <permission-group>/<permission-name>:<role>
+#        - "Overall/Administer:admin"
+#        - "Overall/Read:authenticated"
+        #- "Job/Build:dev"
+        #- "Job/Cancel:dev"
+        #- "Job/Read:dev"
+        #- "Job/Workspace:dev"
+        #- "Overall/Administer:admin"
+        #- "Overall/Read:authenticated"
+        #- "Run/Replay:dev"
+        #- "Run/Update:dev"
+    # METHOD 3 : roleBased
+    #roleBased:
+      #roles:
+        #global:
+          #- name: "admin"
+            #description: "Jenkins administrators"
+            #permissions:
+            #  - "Overall/Administer"
+            #assignments:
+            #  - "admin"
+          #- name: "readonly"
+            #description: "Read-only users"
+            #permissions:
+              #- "Overall/Read"
+              #- "Job/Read"
+            #assignments:
+              #- "authenticated"
+  
+  
+  
+# USE plugin authorize-project:latest provices a new authorization strategy
+security:
+  apiToken:
+    creationOfLegacyTokenEnabled: false
+    tokenGenerationOnCreationEnabled: false
+    usageStatisticsEnabled: true
+  #downloadSettings:
+  #  useBrowser: false
+  #remotingCLI:
+  #  enabled: false
+  #sSHD:
+  #  port: -1
+#  queueItemAuthenticator:
+#    authenticators:
+#    - global:
+#        strategy: triggeringUsersAuthorizationStrategy
+
+jobs:
+- script: |
+    // jobDSL
+    pipelineJob('hello-pipeline-inline') {
+      definition { cps { script("""
+        pipeline {
+          agent any
+          stages {
+            stage('Hello, World!') {
+              steps {
+                sh 'echo "Hello, World!"'
+              }
+            }
+          }
+        }
+      """) } }
+    }

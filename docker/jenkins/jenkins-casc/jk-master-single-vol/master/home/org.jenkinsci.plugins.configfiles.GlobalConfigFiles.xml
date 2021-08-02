@@ -1,0 +1,55 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<org.jenkinsci.plugins.configfiles.GlobalConfigFiles plugin="config-file-provider@3.8.1">
+  <configs class="set">
+    <org.jenkinsci.plugins.configfiles.maven.MavenSettingsConfig>
+      <id>maven-test</id>
+      <name>DummySettings</name>
+      <comment>dummy settings</comment>
+      <content>&lt;settings xmlns=&quot;http://maven.apache.org/SETTINGS/1.0.0&quot;
+          xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+          xsi:schemaLocation=&quot;http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd&quot;&gt;
+  &lt;!-- activeProfiles
+   | List of profiles that are active for all builds.
+   |
+  --&gt;
+  &lt;activeProfiles&gt;
+    &lt;activeProfile&gt;alwaysActiveProfile&lt;/activeProfile&gt;
+    &lt;activeProfile&gt;anotherAlwaysActiveProfile&lt;/activeProfile&gt;
+  &lt;/activeProfiles&gt;
+&lt;/settings&gt;
+</content>
+      <providerId>org.jenkinsci.plugins.configfiles.maven.MavenSettingsConfig$MavenSettingsConfigProvider</providerId>
+      <serverCredentialMappings>
+        <org.jenkinsci.plugins.configfiles.maven.security.ServerCredentialMapping>
+          <serverId>server1</serverId>
+          <credentialsId>someCredentials1</credentialsId>
+        </org.jenkinsci.plugins.configfiles.maven.security.ServerCredentialMapping>
+        <org.jenkinsci.plugins.configfiles.maven.security.ServerCredentialMapping>
+          <serverId>server2</serverId>
+          <credentialsId>someCredentials2</credentialsId>
+        </org.jenkinsci.plugins.configfiles.maven.security.ServerCredentialMapping>
+      </serverCredentialMappings>
+      <isReplaceAll>false</isReplaceAll>
+    </org.jenkinsci.plugins.configfiles.maven.MavenSettingsConfig>
+    <org.jenkinsci.plugins.configfiles.custom.CustomConfig>
+      <id>custom-test</id>
+      <name>DummyCustom1</name>
+      <comment>dummy custom 1</comment>
+      <content>dummy content 1</content>
+      <providerId>org.jenkinsci.plugins.configfiles.custom.CustomConfig$CustomConfigProvider</providerId>
+      <customizedCredentialMappings/>
+    </org.jenkinsci.plugins.configfiles.custom.CustomConfig>
+    <org.jenkinsci.plugins.configfiles.xml.XmlConfig>
+      <id>xml-test</id>
+      <name>DummyXmlConfig</name>
+      <comment>dummy xml config</comment>
+      <content>&lt;root&gt;&lt;dummy test=&quot;abc&quot;&gt;&lt;/dummy&gt;&lt;/root&gt;</content>
+    </org.jenkinsci.plugins.configfiles.xml.XmlConfig>
+    <org.jenkinsci.plugins.configfiles.json.JsonConfig>
+      <id>json-test</id>
+      <name>DummyJsonConfig</name>
+      <comment>dummy json config</comment>
+      <content>{ &quot;dummydata&quot;: {&quot;dummyKey&quot;: &quot;dummyValue&quot;} }</content>
+    </org.jenkinsci.plugins.configfiles.json.JsonConfig>
+  </configs>
+</org.jenkinsci.plugins.configfiles.GlobalConfigFiles>
