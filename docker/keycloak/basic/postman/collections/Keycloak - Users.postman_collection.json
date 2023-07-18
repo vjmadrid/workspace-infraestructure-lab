@@ -1,0 +1,216 @@
+{
+	"info": {
+		"_postman_id": "a4b31375-a548-491a-b616-d50d16c8b666",
+		"name": "Keycloak : Users",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "afd0a612-b77c-4761-b8fb-6fb099ec5b86",
+						"exec": [
+							"eval(pm.environment.get(\"assertResponseStatusIs200\"))();",
+							"",
+							"var responseBody = pm.response.json();",
+							"pm.globals.set(\"kc_access_token\", responseBody.access_token);",
+							"pm.globals.set(\"kc_refresh_token\", responseBody.refresh_token);",
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "112ed930-b5b6-4938-8acb-b9d42facc81e",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "{{kc_admin_username}}",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "{{kc_admin_password}}",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "{{kc_client_id}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{kc_server}}/realms/{{kc_realm}}/protocol/openid-connect/token",
+					"host": [
+						"{{kc_server}}"
+					],
+					"path": [
+						"realms",
+						"{{kc_realm}}",
+						"protocol",
+						"openid-connect",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List of Users in Realm",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "825b0e95-b222-4792-a6aa-bf811a45ad72",
+						"exec": [
+							"eval(pm.environment.get(\"assertResponseStatusIs200\"))();",
+							"",
+							"eval(pm.environment.get(\"storeAndCompareGlobals1\"))();",
+							"eval(pm.environment.get(\"storeAndCompareGlobals2\"))();",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{kc_access_token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{kc_server}}/admin/realms/{{kc_realm}}/users",
+					"host": [
+						"{{kc_server}}"
+					],
+					"path": [
+						"admin",
+						"realms",
+						"{{kc_realm}}",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Logout",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "4fb56e24-836d-4ffa-a156-508679c6ca3e",
+						"exec": [
+							"eval(pm.environment.get(\"assertKeycloakLogout\"))();",
+							"",
+							"pm.globals.unset(\"kc_access_token\");",
+							"pm.globals.unset(\"kc_refresh_token\");",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "refresh_token",
+							"value": "{{kc_refresh_token}}",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "{{kc_client_id}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{kc_server}}/realms/{{kc_realm}}/protocol/openid-connect/logout",
+					"host": [
+						"{{kc_server}}"
+					],
+					"path": [
+						"realms",
+						"{{kc_realm}}",
+						"protocol",
+						"openid-connect",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "d9d17fe0-844c-4bbf-8174-b91846641a15",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "5893610b-f57a-422a-8795-665d3bf0dbbb",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
